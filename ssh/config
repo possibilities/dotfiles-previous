@@ -1,0 +1,17 @@
+Host *
+  FallBackToRsh no
+  UseRsh no
+  GatewayPorts no
+  StrictHostKeyChecking ask
+
+Host u
+  HostName unclemeat.local
+
+Host kob
+  HostName kobnet.net
+
+Host laura
+  HostName 10.0.1.222
+
+Host l
+  HostName 10.0.1.222

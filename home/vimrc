@@ -1,0 +1,114 @@
+set nocompatible
+
+" leader
+let mapleader=','
+
+" pathogen
+filetype plugin on
+
+call pathogen#helptags()
+call pathogen#infect()
+
+filetype plugin indent on
+
+" editing prefs
+set tabstop=2
+set smarttab
+set shiftwidth=2
+set shiftround
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
+set expandtab
+set ai
+set smartindent
+set copyindent
+set wrap
+set ruler
+set backspace=eol,start,indent
+set mouse-=a
+set hidden
+set cursorline
+set colorcolumn=80
+set history=1000
+set nobackup
+set nofoldenable
+set noswapfile
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set pastetoggle=<F2>
+
+set number
+nnoremap <F3> :set nonumber!<CR>
+
+" no arrow keys!
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+
+" cleans up directories
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
+" colors
+syntax enable
+syntax on
+
+" Theme from https://github.com/chrishunt/color-schemes
+set background=dark
+colorscheme vimbrant
+" 6 is a nice grey, 8 effectively turns it off
+highlight ColorColumn ctermbg=8
+
+" delete all buffers
+nnoremap <Leader>! :1,999bd<CR>
+
+" NERDTree
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+nmap <silent> <Space> :NERDTreeToggle<CR>
+
+" next buffer
+nnoremap <silent> <S-Tab> :bp<CR>
+nnoremap <silent> <Tab> :bn<CR>
+
+" clear search highlight easily
+nnoremap <C-c> :noh<CR>
+
+" quick save
+noremap <Leader>m :update<CR>
+" quick save + quit
+noremap <Leader>n :update<CR>:quit<CR>
+
+" quick delete a buffer
+noremap Q :bd<CR>
+
+" setup gist
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
+let g:gist_detect_filetype = 1
+let g:gist_get_multiplefile = 1
+
+" more history
+set history=200
+
+" better history scrolling
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+
+" better split navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-l>l
+
+" setup vim markdown
+let g:vim_markdown_folding_disabled=1

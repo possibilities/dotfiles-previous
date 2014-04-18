@@ -1,0 +1,28 @@
+# Utils
+alias mkdir='mkdir -p'
+alias no='nodemon -e js,coffee,json --verbose'
+
+# apps
+alias g="git"
+alias be="bundle exec"
+alias vt="vagrant"
+alias teamocil="teamocil --here"
+alias tm="teamocil --here"
+alias t="tmux"
+alias ta="tmux attach -t"
+alias tl="tmux list-sessions"
+alias tk="tmux kill-session -t"
+alias kt="killall tmux"
+alias wr="wr --exec"
+alias ip="curl ifconfig.me/ip"
+
+# Versal
+alias va="cd $HOME/code/rest-api && sbt container:start console"
+alias v="versal"
+alias vp="versal preview"
+
+# ST2 always in a new window
+alias subl="subl -n"
+alias s="subl -n"
+
+alias emacs="echo fuck off"

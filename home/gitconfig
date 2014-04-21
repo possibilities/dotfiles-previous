@@ -61,6 +61,6 @@
 	name = Mike Bannister
 	email = notimpossiblemike@gmail.com
 [push]
-	default = simple
+	default = matching
 [github]
 	user = possibilities

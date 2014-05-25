@@ -58,3 +58,9 @@
 [submodule "home/vim/bundle/togglecursor"]
 	path = home/vim/bundle/togglecursor
 	url = https://github.com/jszakmeister/vim-togglecursor.git
+[submodule "home/vim/bundle/rainbow_parentheses"]
+	path = home/vim/bundle/rainbow_parentheses
+	url = https://github.com/kien/rainbow_parentheses.vim.git
+[submodule "home/vim/bundle/vim-fireplace"]
+	path = home/vim/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git

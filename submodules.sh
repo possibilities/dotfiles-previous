@@ -20,3 +20,5 @@ git submodule add https://github.com/kana/vim-textobj-user.git home/vim/bundle/t
 git submodule add https://github.com/kana/vim-textobj-entire.git home/vim/bundle/textobj-entire
 git submodule add https://github.com/kien/ctrlp.vim.git home/vim/bundle/ctrlp
 git submodule add https://github.com/jszakmeister/vim-togglecursor.git home/vim/bundle/togglecursor
+git submodule add https://github.com/kien/rainbow_parentheses.vim.git home/vim/bundle/rainbow_parentheses
+git submodule add https://github.com/tpope/vim-fireplace.git home/vim/bundle/vim-fireplace

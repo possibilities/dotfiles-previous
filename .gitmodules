@@ -64,3 +64,12 @@
 [submodule "home/vim/bundle/vim-fireplace"]
 	path = home/vim/bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+[submodule "home/vim/bundle/fireplace"]
+	path = home/vim/bundle/fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "home/vim/bundle/classpath"]
+	path = home/vim/bundle/classpath
+	url = https://github.com/tpope/vim-classpath.git
+[submodule "home/vim/bundle/clojure-static"]
+	path = home/vim/bundle/clojure-static
+	url = https://github.com/guns/vim-clojure-static.git

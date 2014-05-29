@@ -38,9 +38,7 @@ set noswapfile
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 set pastetoggle=<F2>
-
 set number
-nnoremap <F3> :set nonumber!<CR>
 
 " no arrow keys!
 noremap  <Up> ""

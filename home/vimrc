@@ -18,7 +18,7 @@ set shiftwidth=2
 set shiftround
 set ignorecase
 set smartcase
-set hlsearch
+set nohlsearch
 set incsearch
 set expandtab
 set ai
@@ -79,9 +79,6 @@ nmap <silent> <Space> :NERDTreeToggle<CR>
 " next buffer
 nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <silent> <Tab> :bn<CR>
-
-" clear search highlight easily
-nnoremap <C-c> :noh<CR>
 
 " quick save
 noremap <Leader>m :update<CR>

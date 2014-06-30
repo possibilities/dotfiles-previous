@@ -73,3 +73,15 @@
 [submodule "home/vim/bundle/clojure-static"]
 	path = home/vim/bundle/clojure-static
 	url = https://github.com/guns/vim-clojure-static.git
+[submodule "home/vim/bundle/goyo"]
+	path = home/vim/bundle/goyo
+	url = https://github.com/junegunn/goyo.vim.git
+[submodule "home/vim/bundle/CamelCaseMotion"]
+	path = home/vim/bundle/CamelCaseMotion
+	url = https://github.com/bkad/CamelCaseMotion.git
+[submodule "home/vim/bundle/indent-object"]
+	path = home/vim/bundle/indent-object
+	url = https://github.com/michaeljsmith/vim-indent-object.git
+[submodule "home/vim/bundle/argtextobj"]
+	path = home/vim/bundle/argtextobj
+	url = https://github.com/vim-scripts/argtextobj.vim.git

@@ -24,3 +24,7 @@ git submodule add https://github.com/kien/rainbow_parentheses.vim.git home/vim/b
 git submodule add https://github.com/tpope/vim-fireplace.git home/vim/bundle/fireplace
 git submodule add https://github.com/tpope/vim-classpath.git home/vim/bundle/classpath
 git submodule add https://github.com/guns/vim-clojure-static.git home/vim/bundle/clojure-static
+git submodule add https://github.com/junegunn/goyo.vim.git home/vim/bundle/goyo
+git submodule add https://github.com/bkad/CamelCaseMotion.git home/vim/bundle/CamelCaseMotion
+git submodule add https://github.com/michaeljsmith/vim-indent-object.git home/vim/bundle/indent-object
+git submodule add https://github.com/vim-scripts/argtextobj.vim.git home/vim/bundle/argtextobj

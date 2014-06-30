@@ -16,6 +16,12 @@ alias kt="killall tmux"
 alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 
+# i tend to name tmux windows after the basename of pwd
+tmux_name_window_after_directory () {
+  tmux rename-window -t${TMUX_PANE} `basename $PWD`
+}
+alias tnd=tmux_name_window_after_directory
+
 # Versal
 alias va="cd $HOME/code/rest-api && rm -rf .versal-rest-api-model && rm -rf $HOME/code/rest-api/*.db && sbt container:start console"
 alias v="versal"

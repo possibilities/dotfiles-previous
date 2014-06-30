@@ -17,7 +17,7 @@ alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 
 # Versal
-alias va="cd $HOME/code/rest-api && rm -rf $HOME/code/rest-api/*.db && sbt container:start console"
+alias va="cd $HOME/code/rest-api && rm -rf .versal-rest-api-model && rm -rf $HOME/code/rest-api/*.db && sbt container:start console"
 alias v="versal"
 alias vp="versal preview"
 

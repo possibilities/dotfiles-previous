@@ -37,6 +37,7 @@ set nofoldenable
 set noswapfile
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set paste
 set pastetoggle=<F2>
 set number
 

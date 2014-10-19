@@ -24,7 +24,12 @@ function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
 zle -N self-insert-backslash
 
 project_pwd() {
-  echo $PWD | sed -e "s/\/Users\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    HOMEDIR=Users
+  else
+    HOMEDIR=home
+  fi
+  echo $PWD | sed -e "s/\/$HOMEDIR\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
 }
 
 export PROMPT=$'%{\e[0;90m%}%n@%m%{\e[0m%}

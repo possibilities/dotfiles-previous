@@ -15,3 +15,14 @@ Host laura
 
 Host l
   HostName 10.0.1.222
+
+Host dev
+  HostName 127.0.0.1
+  User mike
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/mike/.vagrant.d/insecure_private_key
+  IdentitiesOnly yes
+  LogLevel FATAL

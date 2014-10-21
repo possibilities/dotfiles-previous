@@ -27,6 +27,10 @@ alias va="cd $HOME/code/rest-api && sbt container:start console"
 alias v="versal"
 alias vp="versal preview"
 
+# Some convenient single letters
+alias f="fig"
+alias d="docker"
+
 # ST2 always in a new window
 alias subl="subl -n"
 alias s="subl -n"

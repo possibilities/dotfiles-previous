@@ -23,6 +23,8 @@
     lg = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph
     lga = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph --all
     sp = smart-pull
+    sl = smart-log
+    sm = smart-merge
 
 [color]
     branch = auto

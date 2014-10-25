@@ -23,7 +23,7 @@ tmux_name_window_after_directory () {
 alias tnd=tmux_name_window_after_directory
 
 # Versal
-alias va="cd $HOME/code/rest-api && sbt container:start console"
+alias rapi="sbt container:start console"
 alias v="versal"
 alias vp="versal preview"
 

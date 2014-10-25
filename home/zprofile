@@ -14,4 +14,4 @@ if [[ `uname` != 'Linux' ]]; then
 fi
 
 # hub is awesome!
-eval "$(hub alias -s)"
+eval "$($HOME/local/bin/hub alias -s)"

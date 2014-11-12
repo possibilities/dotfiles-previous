@@ -12,6 +12,3 @@ if [[ `uname` != 'Linux' ]]; then
     source /etc/profile
   fi
 fi
-
-# hub is awesome!
-eval "$($HOME/local/bin/hub alias -s)"

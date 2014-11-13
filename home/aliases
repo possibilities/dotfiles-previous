@@ -1,6 +1,10 @@
 # Utils
 alias mkdir='mkdir -p'
 alias no='nodemon -e js,coffee,json --verbose'
+alias watch='watch --no-title'
+alias w='watch --no-title'
+alias serve='static --port 4000 --host-address 0.0.0.0'
+alias static='static --port 4000 --host-address 0.0.0.0'
 
 # apps
 alias g="git"

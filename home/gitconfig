@@ -9,6 +9,7 @@
 [alias]
     st = status
     ci = commit
+    cp = cherry-pick
     ciok = commit --no-verify
     br = branch -v
     df = diff

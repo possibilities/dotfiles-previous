@@ -43,6 +43,7 @@ do
 done
 
 echo " - deal with submodules"
+./submodules.sh
 git submodule update --init
 
 echo done

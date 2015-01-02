@@ -91,7 +91,6 @@ noremap <Leader>n :update<CR>:quit<CR>
 
 " quick keys for some common things
 noremap Q :bd<CR>
-noremap E :Eval<CR>
 
 " setup gist
 let g:gist_show_privates = 1

@@ -85,3 +85,6 @@
 [submodule "home/vim/bundle/argtextobj"]
 	path = home/vim/bundle/argtextobj
 	url = https://github.com/vim-scripts/argtextobj.vim.git
+[submodule "home/vim/bundle/delimiteMate"]
+	path = home/vim/bundle/delimiteMate
+	url = https://github.com/Raimondi/delimitMate.git

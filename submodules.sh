@@ -28,3 +28,4 @@ git submodule add https://github.com/junegunn/goyo.vim.git home/vim/bundle/goyo
 git submodule add https://github.com/bkad/CamelCaseMotion.git home/vim/bundle/CamelCaseMotion
 git submodule add https://github.com/michaeljsmith/vim-indent-object.git home/vim/bundle/indent-object
 git submodule add https://github.com/vim-scripts/argtextobj.vim.git home/vim/bundle/argtextobj
+git submodule add https://github.com/Raimondi/delimitMate.git home/vim/bundle/delimiteMate

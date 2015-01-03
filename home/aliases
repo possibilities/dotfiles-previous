@@ -32,5 +32,3 @@ alias d="docker"
 # ST2 always in a new window
 alias subl="subl -n"
 alias s="subl -n"
-
-alias emacs="echo fuck off"

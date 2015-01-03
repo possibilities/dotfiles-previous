@@ -65,8 +65,8 @@ syntax enable
 syntax on
 set t_Co=256
 set background=dark
-colorscheme vydark
-highlight ColorColumn ctermbg=8
+" colors zenburn
+colors lucius
 
 " delete all buffers
 nnoremap <Leader>! :1,999bd<CR>

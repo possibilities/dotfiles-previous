@@ -63,11 +63,9 @@ set directory=~/.vim/tmp
 " colors
 syntax enable
 syntax on
-
-" Theme from https://github.com/chrishunt/color-schemes
+set t_Co=256
 set background=dark
-colorscheme vimbrant
-" 6 is a nice grey, 8 effectively turns it off
+colorscheme vydark
 highlight ColorColumn ctermbg=8
 
 " delete all buffers

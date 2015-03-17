@@ -37,10 +37,9 @@ if [ -f $HOME/.private_env ]; then
   source $HOME/.private_env
 fi
 
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-rbenv rehash
+# Use nvm install via brew
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # levity
 echo

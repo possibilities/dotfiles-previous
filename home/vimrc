@@ -110,7 +110,10 @@ cnoremap <C-n> <Down>
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
-map <C-l> <C-l>l
+map <C-l> <C-w>l
 
 " setup vim markdown
 let g:vim_markdown_folding_disabled=1
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'

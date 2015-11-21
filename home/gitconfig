@@ -19,7 +19,9 @@
     tree = log --graph --pretty=oneline --decorate
     pom = push origin master
     amend = commit --amend -C HEAD
-    stashk = stash --keep-index
+    s = stash --include-untracked
+    sa = stash apply
+    sk = stash --include-untracked --keep-index
 
     l  = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
     lg = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph

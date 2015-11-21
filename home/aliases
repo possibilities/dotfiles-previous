@@ -2,15 +2,10 @@
 alias mkdir='mkdir -p'
 alias no='nodemon -e js,coffee,json --verbose'
 alias watch='watch --no-title'
-alias w='watch --no-title'
-alias static='static --port 4000 --host-address 0.0.0.0'
 
 # apps
 alias g="git"
 alias be="bundle exec"
-alias vt="vagrant"
-alias teamocil="teamocil --here"
-alias tm="teamocil --here"
 alias t="tmux"
 alias ta="tmux attach"
 alias tl="tmux list-sessions"
@@ -21,7 +16,6 @@ alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
 
 # Versal
-alias rapi="sbt container:start console"
 alias v="versal"
 alias vp="versal preview"
 

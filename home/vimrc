@@ -38,6 +38,9 @@ set nobackup
 set nofoldenable
 set noswapfile
 set list
+" make split direction more natural (or, like tmux at least)
+set splitbelow
+set splitright
 " NOTE here we map literal characters to something
 "      hopefully more palatable
 set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.

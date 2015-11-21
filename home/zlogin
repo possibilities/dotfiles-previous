@@ -3,4 +3,3 @@ export PATH=$HOME/local/bin:$PATH
 # pip uses this when you install with --use
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/share/python:$PATH

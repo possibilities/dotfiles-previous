@@ -16,19 +16,11 @@ alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
 
 # Versal
-alias v="versal"
-alias vp="versal preview"
+alias v="time versal"
+alias vp="time versal preview"
 alias web="cd ~/code/versal.com && nvm use 0.10 && ulimit -n 4096"
-alias wsync="vagrant rsync"
-alias wall="web && grunt && wsync"
-alias wtest="web && grunt clientTest"
-alias wquick="web && grunt stylus coffee:cgm requirejs:cgm && wsync"
-alias wbuild="web && grunt buildClient && wsync"
-
-# Some convenient single letters
-alias f="fig"
-alias d="docker"
-
-# ST2 always in a new window
-alias subl="subl -n"
-alias s="subl -n"
+alias wsync="time vagrant rsync"
+alias wall="web && time grunt && wsync"
+alias wtest="web && time grunt clientTest"
+alias wquick="web && time grunt stylus coffee:cgm requirejs:cgm && wsync"
+alias wbuild="web && time grunt buildClient && wsync"

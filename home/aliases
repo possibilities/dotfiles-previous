@@ -19,9 +19,11 @@ alias tnd="tmux_name_window_after_directory"
 alias v="versal"
 alias vp="versal preview"
 alias web="cd ~/code/versal.com && nvm use 0.10 && ulimit -n 4096"
-alias wall="web && grunt && vagrant rsync"
+alias wsync="vagrant rsync"
+alias wall="web && grunt && wsync"
 alias wtest="web && grunt clientTest"
-alias wbuild="web && grunt buildClient && vagrant rsync"
+alias wquick="web && grunt stylus coffee:cgm requirejs:cgm && wsync"
+alias wbuild="web && grunt buildClient && wsync"
 
 # Some convenient single letters
 alias f="fig"

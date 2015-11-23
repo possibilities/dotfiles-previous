@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+web_env() {
+  source $(brew --prefix nvm)/nvm.sh
+  cd ${HOME}/code/versal.com
+  nvm use 0.10
+  ulimit -n 4096
+}
+
+if [ -z "${1}" ]; then
+  web_env
+elif [ "${1}" = "all" ]; then
+  web_env
+  time grunt || true
+  web sync
+elif [ "${1}" = "build" ]; then
+  web_env
+  time grunt buildClient || true
+  web sync
+elif [ "${1}" = "test" ]; then
+  web_env
+  time grunt clientTest
+elif [ "${1}" = "fast" ]; then
+  web_env
+  time grunt stylus coffee:cgm requirejs:cgm || true
+  web sync
+elif [ "${1}" = "sync" ]; then
+  web_env
+  time vagrant rsync
+else
+  echo "Usage: web [all|build|test|fast|sync]"
+  exit 1
+fi

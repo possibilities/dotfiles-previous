@@ -32,7 +32,10 @@ elif [ "${1}" = "fast" ]; then
 elif [ "${1}" = "sync" ]; then
   web_env
   time vagrant rsync
+elif [ "${1}" = "restart" ]; then
+  web_env
+  ./dev/tasks.sh restart
 else
-  echo "Usage: web [all|build|test|fast|sync]"
+  echo "Usage: web [all|build|test|fast|sync|restart]"
   exit 1
 fi

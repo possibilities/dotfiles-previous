@@ -19,9 +19,12 @@ elif [ "${1}" = "build" ]; then
   web_env
   time grunt buildClient || true
   web sync
-elif [ "${1}" = "test" ]; then
+elif [ "${1}" = "ctest" ]; then
   web_env
   time grunt clientTest
+elif [ "${1}" = "stest" ]; then
+  web_env
+  time grunt serverTest
 elif [ "${1}" = "fast" ]; then
   web_env
   time grunt stylus coffee:cgm requirejs:cgm || true

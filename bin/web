@@ -13,12 +13,15 @@ if [ -z "${1}" ]; then
   web_env
 elif [ "${1}" = "all" ]; then
   web_env
-  time grunt || true
+  time grunt
   web sync
 elif [ "${1}" = "build" ]; then
   web_env
-  time grunt buildClient || true
+  time grunt buildClient
   web sync
+elif [ "${1}" = "test" ]; then
+  web_env
+  time grunt clientTest && grunt serverTest
 elif [ "${1}" = "ctest" ]; then
   web_env
   time grunt clientTest
@@ -27,7 +30,15 @@ elif [ "${1}" = "stest" ]; then
   time grunt serverTest
 elif [ "${1}" = "fast" ]; then
   web_env
-  time grunt stylus coffee:cgm requirejs:cgm || true
+  time grunt stylus coffee:cgm requirejs:cgm
+  web sync
+elif [ "${1}" = "styles" ]; then
+  web_env
+  time grunt stylus
+  web sync
+elif [ "${1}" = "styleguide" ]; then
+  web_env
+  time grunt buildCSSDocs
   web sync
 elif [ "${1}" = "sync" ]; then
   web_env
@@ -36,6 +47,6 @@ elif [ "${1}" = "restart" ]; then
   web_env
   ./dev/tasks.sh restart
 else
-  echo "Usage: web [all|build|test|fast|sync|restart]"
+  echo "Usage: web [all|build|test|ctest|stest|fast|styles|styleguide|sync|restart]"
   exit 1
 fi

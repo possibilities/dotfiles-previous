@@ -18,3 +18,4 @@ alias tnd="tmux_name_window_after_directory"
 # Versal
 alias v="time versal"
 alias vp="time versal preview"
+alias w="web"

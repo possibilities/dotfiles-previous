@@ -26,13 +26,6 @@ setopt EXTENDED_GLOB
 # use vim as an editor
 export EDITOR='vim'
 
-# Complete teamocil
-compctl -g '~/.teamocil/*(:t:r)' teamocil
-
-if [ -f $HOME/.nvm/nvm.sh ]; then
-  . $HOME/.nvm/nvm.sh
-fi
-
 if [ -f $HOME/.private_env ]; then
   source $HOME/.private_env
 fi

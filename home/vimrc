@@ -117,3 +117,6 @@ let g:vim_markdown_folding_disabled=1
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" Hide directories named `dist` from Ctrl+P
+set wildignore+=*/dist/*

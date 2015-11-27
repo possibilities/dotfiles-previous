@@ -17,17 +17,20 @@ elif [ "${1}" = "all" ]; then
   web sync
 elif [ "${1}" = "build" ]; then
   web_env
-  time grunt buildClient
+  time grunt clientBuild
   web sync
 elif [ "${1}" = "test" ]; then
   web_env
   time grunt clientTest && grunt serverTest
+  web sync
 elif [ "${1}" = "ctest" ]; then
   web_env
   time grunt clientTest
+  web sync
 elif [ "${1}" = "stest" ]; then
   web_env
   time grunt serverTest
+  web sync
 elif [ "${1}" = "fast" ]; then
   web_env
   time grunt stylus coffee:cgm requirejs:cgm

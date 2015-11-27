@@ -34,9 +34,7 @@ set hidden
 set cursorline
 set colorcolumn=80
 set history=1000
-set nobackup
 set nofoldenable
-set noswapfile
 set list
 " make split direction more natural (or, like tmux at least)
 set splitbelow
@@ -59,9 +57,13 @@ noremap! <Left> <Esc>
 noremap  <Right> ""
 noremap! <Right> <Esc>
 
-" cleans up directories
-set backupdir=~/.vim/backup
-set directory=~/.vim/tmp
+" nice backups
+" via http://www.gmarks.org/vi_backups.html
+set backup
+set writebackup
+au BufWritePre * let &backupext = '%' . substitute(expand("%:p:h"), "/" , "%" , "g") . "%" . strftime("%Y.%m.%d.%H.%M.%S")
+au VimLeave * !cp % ~/.vim/backups/$(echo %:p | sed 's/\(.*\/\)\(.*\)/\2\/\1/g' | sed 's/\//\%/g')$(date +\%Y.\%m.\%d.\%H.\%M.\%S).wq
+set backupdir=~/.vim/backups/
 
 " colors
 syntax enable

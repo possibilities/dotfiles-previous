@@ -14,6 +14,7 @@ alias kt="killall tmux"
 alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
+alias vt="vagrant"
 
 # Versal
 alias v="time versal"

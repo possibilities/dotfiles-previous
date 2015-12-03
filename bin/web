@@ -10,7 +10,8 @@ web_env() {
 }
 
 if [ -z "${1}" ]; then
-  web_env
+  time web all
+  web sync
 elif [ "${1}" = "all" ]; then
   web_env
   time grunt
@@ -21,7 +22,13 @@ elif [ "${1}" = "build" ]; then
   web sync
 elif [ "${1}" = "test" ]; then
   web_env
-  time grunt clientTest && grunt serverTest
+  if [ -z "${2}" ]; then
+    time grunt clientTest && grunt serverTest
+  elif [ "${2}" = "client" ]; then
+    time grunt clientTest
+  elif [ "${2}" = "server" ]; then
+    time grunt serverTest
+  fi
   web sync
 elif [ "${1}" = "ctest" ]; then
   web_env
@@ -49,7 +56,10 @@ elif [ "${1}" = "sync" ]; then
 elif [ "${1}" = "restart" ]; then
   web_env
   ./dev/tasks.sh restart
+elif [ "${1}" = "release" ]; then
+  web_env
+  ./release.sh
 else
-  echo "Usage: web [all|build|test|ctest|stest|fast|styles|styleguide|sync|restart]"
+  echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|sync|restart|release]"
   exit 1
 fi

@@ -42,8 +42,7 @@ do
   ln -sf $PWD/$file $HOME/local/bin/$file_name
 done
 
-echo " - deal with submodules"
-./submodules.sh || true
-git submodule update --init
+echo " - deal with vim plugins"
+./install-vim-plugins.sh || true
 
 echo done

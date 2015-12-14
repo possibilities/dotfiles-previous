@@ -30,6 +30,9 @@ if [ -f $HOME/.private_env ]; then
   source $HOME/.private_env
 fi
 
+# Use z
+. `brew --prefix`/etc/profile.d/z.sh
+
 # Use nvm install via brew
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh

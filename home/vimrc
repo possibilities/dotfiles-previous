@@ -117,6 +117,7 @@ nnoremap <silent> ff :split<CR>
 nnoremap <silent> <leader>g :Ggrep <cword><CR>
 nnoremap <silent> <leader>gg :Ggrep<space>
 
+" some shortcuts for file navigation
 nnoremap <silent> <leader>e :Explore<CR>
 nnoremap <silent> <space> :e.<CR>
 

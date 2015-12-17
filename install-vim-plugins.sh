@@ -49,6 +49,8 @@ PLUGIN_REPOS=(
   'scrooloose/syntastic'
   # gist magic
   'mattn/gist-vim'
+  # vim interface to web api, gist-vim depends on it
+  'mattn/webapi-vim'
   # motions on speed
   # 'Lokaltog/vim-easymotion'
   # fuzzy file searching

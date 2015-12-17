@@ -1,7 +1,5 @@
 #!/bin/sh
 
-set -e
-
 web_env() {
   source $(brew --prefix nvm)/nvm.sh
   cd ${HOME}/code/versal.com
@@ -66,7 +64,7 @@ elif [ "${1}" = "release" ]; then
   web_env
   ./release.sh
 elif [ "${1}" = "log" ]; then
-	vagrant ssh -- "cd versal.com && forever stopall ; node app | bunyan -c 'this.name!=\"datapipes\"'"
+  vagrant ssh -- "tail -f ./versal.com/express.log"
 else
   echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|sync|restart|release|log]"
   exit 1

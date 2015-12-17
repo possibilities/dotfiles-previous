@@ -1,2 +1,6 @@
+# backup stuff
 home/vim/backups
 !home/vim/backups/.keep
+
+# temps
+home/vim/.netrwhist

@@ -9,7 +9,6 @@ filetype plugin on
 call pathogen#helptags()
 call pathogen#infect()
 
-let delimitMate_expand_cr = 1
 filetype indent plugin on
 
 " editing prefs
@@ -46,6 +45,11 @@ set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 " set paste
 set pastetoggle=<F2>
 set number
+" recommended by flagship
+" https://github.com/tpope/vim-flagship/blob/master/doc/flagship.txt
+set laststatus=2
+set showtabline=2
+set guioptions-=e
 
 " no arrow keys!
 noremap  <Up> ""
@@ -80,13 +84,6 @@ colors lucius
 
 " delete all buffers
 nnoremap <Leader>! :1,999bd<CR>
-
-" NERDTree
-let NERDTreeChDirMode=2
-let NERDTreeWinSize=35
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-nmap <silent> <Space> :NERDTreeToggle<CR>
 
 " next buffer
 nnoremap <silent> <S-Tab> :bp<CR>
@@ -127,3 +124,9 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 " Hide directories named `dist` from Ctrl+P
 set wildignore+=*/dist/*
+
+let @r='gg/[jddkP/(^Mjdd'
+" let @r='gg/[\jddkP/(\jdd?[\kPikbA = requireJ'
+let @c='/defineVjjxVG<G?\n\wjyiwGokbkbkbkbkbmodule.exports  kb= p'
+
+autocmd User Flags call Hoist('buffer', function('fugitive#statusline'))

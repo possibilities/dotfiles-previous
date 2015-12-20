@@ -15,6 +15,9 @@ alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
 alias vt="vagrant"
+alias d="docker"
+alias dm="docker-machine"
+alias dc="docker-compose"
 
 # Versal
 alias v="time versal"

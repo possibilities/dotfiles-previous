@@ -18,7 +18,13 @@ elif [ "${1}" = "all" ]; then
   web sync
 elif [ "${1}" = "build" ]; then
   web_env
-  time grunt clientBuild
+  if [ -z "${2}" ]; then
+    time grunt build
+  elif [ "${2}" = "client" ]; then
+    time grunt clientBuild
+  elif [ "${2}" = "server" ]; then
+    time grunt build
+  fi
   web sync
 elif [ "${1}" = "test" ]; then
   web_env
@@ -59,7 +65,9 @@ elif [ "${1}" = "restart" ]; then
 elif [ "${1}" = "release" ]; then
   web_env
   ./release.sh
+elif [ "${1}" = "log" ]; then
+	vagrant ssh -- "cd versal.com && forever stopall ; node app | bunyan -c 'this.name!=\"datapipes\"'"
 else
-  echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|sync|restart|release]"
+  echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|sync|restart|release|log]"
   exit 1
 fi

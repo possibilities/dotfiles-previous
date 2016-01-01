@@ -113,7 +113,9 @@ cnoremap <C-n> <Down>
 nnoremap <silent> vv :vsplit<CR>
 nnoremap <silent> ff :split<CR>
 
-" make grepping the project easier
+" make doing things with git and github easier
+nnoremap <silent> <leader>B <CR>:Gbrowse<CR>
+nnoremap <silent> <leader>G :Gist<CR>
 nnoremap <silent> <leader>g :Ggrep <cword><CR>
 nnoremap <silent> <leader>gg :Ggrep<space>
 

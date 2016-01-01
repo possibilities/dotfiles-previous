@@ -134,3 +134,10 @@ set wildignore+=*/dist/*
 
 " some macros we want to save
 let @r=''
+
+" NERDTree
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+nmap <silent> <Space> :NERDTreeToggle<CR>

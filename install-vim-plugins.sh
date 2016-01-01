@@ -33,6 +33,8 @@ PLUGIN_REPOS=(
 
   # comment toggling
   'tpope/vim-commentary'
+  # nerd tree file explorer
+  'scrooloose/nerdtree'
   # surround things with things
   'tpope/vim-surround'
   # nice minimal/pluggable statusline
@@ -41,12 +43,11 @@ PLUGIN_REPOS=(
   'tpope/vim-fugitive'
   # enable repeating supported plugin maps with "."
   'tpope/vim-repeat'
-  # makes netrw nicer
-  'tpope/vim-vinegar'
   # pairs of handy bracket mappings
   'tpope/vim-unimpaired'
   # syntax checking hacks
-  'scrooloose/syntastic'
+  # disabled because it showed so many problems in es6+ files
+  # 'scrooloose/syntastic'
   # gist magic
   'mattn/gist-vim'
   # vim interface to web api, gist-vim depends on it
@@ -68,6 +69,8 @@ PLUGIN_REPOS=(
   'airblade/vim-gitgutter'
   # navigate tmux and vim splits seamlessly
   'christoomey/vim-tmux-navigator'
+  # show hex and rgb colors inline
+  'ap/vim-css-color'
 
   # text objects
 

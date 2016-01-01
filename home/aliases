@@ -18,6 +18,7 @@ alias vt="vagrant"
 alias d="docker"
 alias dm="docker-machine"
 alias dc="docker-compose"
+alias npI="rm -rf ./node_modules && npm install"
 
 # Versal
 alias v="time versal"

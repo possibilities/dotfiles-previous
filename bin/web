@@ -50,6 +50,10 @@ elif [ "${1}" = "styles" ]; then
   web_env
   time grunt stylus
   web sync
+elif [ "${1}" = "jade" ]; then
+  web_env
+  time grunt jade
+  web sync
 elif [ "${1}" = "styleguide" ]; then
   web_env
   time grunt buildCSSDocs
@@ -66,6 +70,6 @@ elif [ "${1}" = "release" ]; then
 elif [ "${1}" = "log" ]; then
   vagrant ssh -- "tail -f ./versal.com/express.log"
 else
-  echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|sync|restart|release|log]"
+  echo "Usage: web [all|build|test|test|test client|test server|fast|styles|styleguide|jade|sync|restart|release|log]"
   exit 1
 fi

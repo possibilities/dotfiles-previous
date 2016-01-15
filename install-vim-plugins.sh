@@ -10,24 +10,25 @@ PLUGIN_REPOS=(
 
   # languages
 
-  # ruby
-  'vim-ruby/vim-ruby'
+  # # ruby
+  # 'vim-ruby/vim-ruby'
   # markdown
   'tpope/vim-markdown'
   # js
   'othree/yajs.vim'
   # coffee
   'kchmck/vim-coffee-script'
-  # python
-  'klen/python-mode'
-  # clojure
-  'guns/vim-clojure-static'
+  # # python
+  # 'klen/python-mode'
+  # # clojure
+  # 'guns/vim-clojure-static'
   # stylus
   'wavded/vim-stylus'
   # jsx
   'mxw/vim-jsx'
-  # jade
-  'digitaltoad/vim-jade'
+  # # jade
+  # investigate: https://github.com/digitaltoad/vim-jade/issues/33
+  # 'digitaltoad/vim-jade'
 
   # utils
 
@@ -78,22 +79,22 @@ PLUGIN_REPOS=(
   'kana/vim-textobj-user'
   # ae/ie for the entire region of the current buffer
   'kana/vim-textobj-entire'
-  # a_/i_ for a region between _s such as bar in foo_bar_baz
-  'lucapette/vim-textobj-underscore'
-  # au/iu for a URL
-  'mattn/vim-textobj-url'
-  # aq/iq for the closest pairs of quotes of any type
-  'beloglazov/vim-textobj-quotes'
-  # a,/i, for an argument to a function
-  'sgur/vim-textobj-parameter'
-  # al/il for the current line
-  'kana/vim-textobj-line'
-  # af/if and aF/iF for a function / extensible for any language
-  'kana/vim-textobj-function'
-  # adh/idh and others for various elements in diff(1) output
-  'kana/vim-textobj-diff'
-  # ai/ii/aI/iI for indent level including/excluding surrounding lines
-  'michaeljsmith/vim-indent-object'
+  # # a_/i_ for a region between _s such as bar in foo_bar_baz
+  # 'lucapette/vim-textobj-underscore'
+  # # au/iu for a URL
+  # 'mattn/vim-textobj-url'
+  # # aq/iq for the closest pairs of quotes of any type
+  # 'beloglazov/vim-textobj-quotes'
+  # # a,/i, for an argument to a function
+  # 'sgur/vim-textobj-parameter'
+  # # al/il for the current line
+  # 'kana/vim-textobj-line'
+  # # af/if and aF/iF for a function / extensible for any language
+  # 'kana/vim-textobj-function'
+  # # adh/idh and others for various elements in diff(1) output
+  # 'kana/vim-textobj-diff'
+  # # ai/ii/aI/iI for indent level including/excluding surrounding lines
+  # 'michaeljsmith/vim-indent-object'
 )
 
 for PLUGIN_REPO in ${PLUGIN_REPOS[@]}; do

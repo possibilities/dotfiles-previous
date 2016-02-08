@@ -44,7 +44,13 @@ elif [ "${1}" = "stest" ]; then
   web sync
 elif [ "${1}" = "fast" ]; then
   web_env
-  time grunt stylus coffee:cgm requirejs:cgm
+  if [ -z "${2}" ]; then
+    time grunt stylus coffee:cgm requirejs:cgm
+  elif [ "${2}" = "player_navbar" ]; then
+    time grunt stylus coffee:playerNavbar requirejs:playerNavbar
+  elif [ "${2}" = "server" ]; then
+    time grunt serverTest
+  fi
   web sync
 elif [ "${1}" = "styles" ]; then
   web_env

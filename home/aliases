@@ -19,6 +19,7 @@ alias d="docker"
 alias dm="docker-machine"
 alias dc="docker-compose"
 alias npI="rm -rf ./node_modules && npm install"
+alias gist="gist --open --private"
 
 # Versal
 alias v="time versal"

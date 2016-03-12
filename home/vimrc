@@ -165,3 +165,6 @@ let NERDTreeWinSize=35
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
 nmap <silent> <Space> :NERDTreeToggle<CR>
+
+" toggle all gutters
+nnoremap <leader>g :GitGutterToggle<CR>:set nonumber!<CR>

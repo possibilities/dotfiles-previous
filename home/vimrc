@@ -28,6 +28,7 @@ set copyindent
 set wrap
 set ruler
 set backspace=eol,start,indent
+set cmdwinheight=15
 
 set hidden
 set cursorline

@@ -121,8 +121,6 @@ nnoremap <silent> ff :split<CR>
 " make doing things with git and github easier
 nnoremap <silent> <leader>B <CR>:Gbrowse<CR>
 nnoremap <silent> <leader>G :Gist<CR>
-nnoremap <silent> <leader>g :Ggrep <cword><CR>
-nnoremap <silent> <leader>gg :Ggrep<space>
 
 " some shortcuts for file navigation
 nnoremap <silent> <leader>e :Explore<CR>
@@ -134,11 +132,32 @@ let g:vim_markdown_folding_disabled=1
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+  " bind K to grep word under cursor with Ag
+  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+endif
+
 " hide directories named `dist` from Ctrl+P
+" unsure why we have to since it should get .gitignored anyway
+" also should try now that we have `ag` in place, which respects
+" gitignore pretty well
 set wildignore+=*/dist/*
 
-" some macros we want to save
-let @r=''
+" let .gitignore mark a project boundary
+let g:ctrlp_root_markers = ['.gitignore']
+
+if executable('ag')
+  " let `ag` be the matcher for ctrlp
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+" bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 " NERDTree
 let NERDTreeChDirMode=2

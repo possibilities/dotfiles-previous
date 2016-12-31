@@ -168,3 +168,7 @@ nmap <silent> <Space> :NERDTreeToggle<CR>
 
 " toggle all gutters
 nnoremap <leader>g :GitGutterToggle<CR>:set nonumber!<CR>
+
+" fix clipboard on sierra
+" See https://stackoverflow.com/questions/39645253/clipboard-failure-in-tmux-vim-after-upgrading-to-macos-sierra
+set clipboard+=unnamed

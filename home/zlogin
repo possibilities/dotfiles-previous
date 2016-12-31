@@ -3,3 +3,9 @@ export PATH=$HOME/local/bin:$PATH
 # pip uses this when you install with --use
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
+# tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+# google sdk
+export PATH="$HOME/local/google-cloud-sdk/bin:$PATH"
+# yarn
+export PATH="$PATH:`yarn global bin`"

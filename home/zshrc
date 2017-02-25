@@ -45,4 +45,6 @@ echo
 s="/home/mike/code/course-api-toolbelt/main.sh"; test -f $s && source $s
 s="/Users/mike/code/course-api-toolbelt/main.sh"; test -f $s && source $s
 
+export PATH="$HOME/.yarn/bin:$PATH"
+
 eval "$(hub alias -s)"

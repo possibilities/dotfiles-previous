@@ -6,6 +6,7 @@ alias zh='cat $HOME/.zsh_history'
 
 # apps
 alias g="git"
+alias clone="hub clone"
 alias be="bundle exec"
 alias t="tmux"
 alias ta="tmux attach"

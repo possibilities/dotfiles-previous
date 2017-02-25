@@ -23,6 +23,7 @@
     sa = stash apply
     sk = stash --include-untracked --keep-index
     pf = push --force-with-lease
+    pr = pull-request -o
 
     l  = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
     lg = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph

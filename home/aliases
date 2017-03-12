@@ -25,3 +25,5 @@ alias gist="gist --open --private"
 alias v="time versal"
 alias vp="time versal preview"
 alias w="web"
+
+alias up='docker-compose up'

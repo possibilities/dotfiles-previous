@@ -1,0 +1,13 @@
+#!/bin/sh
+while hub ci-status | grep -m 1 "pending"; do : ; done
+hub ci-status
+
+CI_STATUS=$(hub ci-status)
+if [ "$CI_STATUS" == "success" ]
+then
+  echo everything is perfect, go!
+  exit 0
+else
+  echo everything is broken, stop!
+  exit 0
+fi

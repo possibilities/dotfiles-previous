@@ -9,5 +9,5 @@ then
   exit 0
 else
   echo everything is broken, stop!
-  exit 0
+  exit 1
 fi

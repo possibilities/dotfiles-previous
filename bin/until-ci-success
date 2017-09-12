@@ -1,6 +1,11 @@
 #!/bin/sh
-while hub ci-status | grep -m 1 "pending"; do : ; done
-hub ci-status
+CI_STATUS=$(hub ci-status)
+
+while [ "$CI_STATUS" == "pending" ]
+do
+sleep 2
+CI_STATUS=$(hub ci-status)
+done
 
 CI_STATUS=$(hub ci-status)
 if [ "$CI_STATUS" == "success" ]

@@ -1,6 +1,8 @@
 #!/bin/sh
 CI_STATUS=$(hub ci-status)
 
+echo "${CI_STATUS}..."
+
 while [ "$CI_STATUS" == "pending" ]
 do
 sleep 2
@@ -11,8 +13,17 @@ CI_STATUS=$(hub ci-status)
 if [ "$CI_STATUS" == "success" ]
 then
   echo everything is perfect, go!
+  if [ $# -ne 0 ]; then
+    echo "$@"
+    notify --message "$@" --title "ci sucess!"
+  fi
+
   exit 0
 else
   echo everything is broken, stop!
+  if [ $# -ne 0 ]; then
+    echo "$@"
+    notify --message "$@" --title "ci failure!"
+  fi
   exit 1
 fi

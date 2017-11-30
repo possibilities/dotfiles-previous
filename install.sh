@@ -45,4 +45,7 @@ done
 echo " - deal with vim plugins"
 ./install-vim-plugins.sh || true
 
+echo " - copy haproxy config"
+sudo rm -rf /Library/LaunchDaemons/org.homebrew.haproxy.plist && sudo cp ./org.homebrew.haproxy.plist /Library/LaunchDaemons/org.homebrew.haproxy.plist
+
 echo done

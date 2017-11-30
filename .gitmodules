@@ -1,21 +1,15 @@
 [submodule "home/vim/bundle/vim-lucius"]
 	path = home/vim/bundle/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius.git
-[submodule "home/vim/bundle/vim-markdown"]
-	path = home/vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "home/vim/bundle/yajs.vim"]
-	path = home/vim/bundle/yajs.vim
-	url = https://github.com/othree/yajs.vim.git
-[submodule "home/vim/bundle/vim-coffee-script"]
-	path = home/vim/bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
-[submodule "home/vim/bundle/vim-stylus"]
-	path = home/vim/bundle/vim-stylus
-	url = https://github.com/wavded/vim-stylus.git
+[submodule "home/vim/bundle/vim-javascript"]
+	path = home/vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
 [submodule "home/vim/bundle/vim-jsx"]
 	path = home/vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
+[submodule "home/vim/bundle/vim-markdown"]
+	path = home/vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "home/vim/bundle/vim-commentary"]
 	path = home/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -31,6 +25,9 @@
 [submodule "home/vim/bundle/vim-fugitive"]
 	path = home/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+[submodule "home/vim/bundle/vim-rhubarb"]
+	path = home/vim/bundle/vim-rhubarb
+	url = https://github.com/tpope/vim-rhubarb.git
 [submodule "home/vim/bundle/vim-repeat"]
 	path = home/vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -49,15 +46,9 @@
 [submodule "home/vim/bundle/vim-togglecursor"]
 	path = home/vim/bundle/vim-togglecursor
 	url = https://github.com/jszakmeister/vim-togglecursor.git
-[submodule "home/vim/bundle/rainbow_parentheses.vim"]
-	path = home/vim/bundle/rainbow_parentheses.vim
-	url = https://github.com/kien/rainbow_parentheses.vim.git
 [submodule "home/vim/bundle/vim-classpath"]
 	path = home/vim/bundle/vim-classpath
 	url = https://github.com/tpope/vim-classpath.git
-[submodule "home/vim/bundle/CamelCaseMotion"]
-	path = home/vim/bundle/CamelCaseMotion
-	url = https://github.com/bkad/CamelCaseMotion.git
 [submodule "home/vim/bundle/vim-gitgutter"]
 	path = home/vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git

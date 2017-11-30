@@ -96,6 +96,9 @@ noremap <Leader>m :update<CR>
 " quick save + quit
 noremap <Leader>n :update<CR>:quit<CR>
 
+noremap <Leader>j :cprev<CR>
+noremap <Leader>k :cnext<CR>
+
 " a binding for closing things, closes:
 " * the current buffer :bd
 " * the quickfix list :lclose

@@ -3,35 +3,10 @@
 set -e
 
 PLUGIN_REPOS=(
-  # colors
-
-  # nice grey and black
   'jonathanfilip/vim-lucius'
-
-  # languages
-
-  # # ruby
-  # 'vim-ruby/vim-ruby'
-  # markdown
-  'tpope/vim-markdown'
-  # js
-  'othree/yajs.vim'
-  # coffee
-  'kchmck/vim-coffee-script'
-  # # python
-  # 'klen/python-mode'
-  # # clojure
-  # 'guns/vim-clojure-static'
-  # stylus
-  'wavded/vim-stylus'
-  # jsx
+  'pangloss/vim-javascript'
   'mxw/vim-jsx'
-  # # jade
-  # investigate: https://github.com/digitaltoad/vim-jade/issues/33
-  # 'digitaltoad/vim-jade'
-
-  # utils
-
+  'tpope/vim-markdown'
   # comment toggling
   'tpope/vim-commentary'
   # nerd tree file explorer
@@ -42,6 +17,7 @@ PLUGIN_REPOS=(
   'tpope/vim-flagship'
   # vim and git make love
   'tpope/vim-fugitive'
+  'tpope/vim-rhubarb'
   # enable repeating supported plugin maps with "."
   'tpope/vim-repeat'
   # pairs of handy bracket mappings
@@ -53,28 +29,19 @@ PLUGIN_REPOS=(
   'mattn/gist-vim'
   # vim interface to web api, gist-vim depends on it
   'mattn/webapi-vim'
-  # motions on speed
-  # 'Lokaltog/vim-easymotion'
   # fuzzy file searching
   'kien/ctrlp.vim'
   # show the block cursor in normal mode, line cursor in insert mode
   'jszakmeister/vim-togglecursor'
-  # color code paren pairs
-  'kien/rainbow_parentheses.vim'
-  # clojure repl
-  # 'tpope/vim-fireplace'
   'tpope/vim-classpath'
   # motion around camel humps
-  'bkad/CamelCaseMotion'
+  # 'bkad/CamelCaseMotion'
   # show vim status in gutter
   'airblade/vim-gitgutter'
   # navigate tmux and vim splits seamlessly
   'christoomey/vim-tmux-navigator'
   # show hex and rgb colors inline
   'ap/vim-css-color'
-
-  # text objects
-
   # enable text object user plugins
   'kana/vim-textobj-user'
   # ae/ie for the entire region of the current buffer

@@ -31,6 +31,8 @@
     sp = smart-pull
     sl = smart-log
     sm = smart-merge
+    r = rev-parse
+    rs = rev-parse --short
 
 [color]
     branch = auto

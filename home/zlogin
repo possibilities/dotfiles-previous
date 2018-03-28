@@ -11,3 +11,7 @@ export PATH="$HOME/.tmuxifier/bin:$PATH"
 export PATH="$HOME/local/google-cloud-sdk/bin:$PATH"
 # yarn
 export PATH="$PATH:`yarn global bin`"
+
+if [ $commands[kubectl] ]; then
+  source <(kubectl completion zsh)
+fi

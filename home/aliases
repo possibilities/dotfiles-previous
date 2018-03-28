@@ -7,25 +7,13 @@ alias zh='cat $HOME/.zsh_history'
 # apps
 alias g="git"
 alias clone="hub clone"
-alias be="bundle exec"
 alias t="tmux"
 alias ta="tmux attach"
-alias tl="tmux list-sessions"
-alias tk="tmux kill-session -t"
 alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
 alias tn="tmux_name_window"
 alias gh="grep_history"
-alias d="docker"
-alias dm="docker-machine"
-alias dc="docker-compose"
-alias npI="rm -rf ./node_modules && npm install"
 alias gist="gist --open --private"
-
-# Versal
-alias v="time versal"
-alias vp="time versal preview"
-alias w="web"
 
 alias k="kubectl"

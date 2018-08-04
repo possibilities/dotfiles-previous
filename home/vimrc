@@ -148,8 +148,8 @@ endif
 " gitignore pretty well
 set wildignore+=*/dist/*
 
-" let .gitignore mark a project boundary
-let g:ctrlp_root_markers = ['.gitignore']
+" let .git mark a project boundary
+let g:ctrlp_root_markers = ['.git']
 
 if executable('ag')
   " let `ag` be the matcher for ctrlp

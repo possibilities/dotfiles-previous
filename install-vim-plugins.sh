@@ -64,6 +64,8 @@ PLUGIN_REPOS=(
   # 'michaeljsmith/vim-indent-object'
 )
 
+git submodule update --recursive --init
+
 for PLUGIN_REPO in ${PLUGIN_REPOS[@]}; do
   PLUGIN_NAME=$(basename $PLUGIN_REPO)
   if [ ! -d home/vim/bundle/${PLUGIN_NAME} ]; then

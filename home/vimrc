@@ -179,3 +179,6 @@ set clipboard+=unnamed
 " js stuff
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
+
+" remap jump back to jive with tmux
+nnoremap <C-J> <C-O>

@@ -3,10 +3,6 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-if [ -e "$HOME/.private-aliases" ]; then
-  source "$HOME/.private-aliases"
-fi
-
 # ignore duplicate history entries
 setopt histignoredups
 
@@ -15,6 +11,8 @@ setopt interactivecomments
 
 # keep TONS of history
 export HISTSIZE=4096
+
+setopt auto_cd
 
 # automatically pushd
 setopt auto_pushd

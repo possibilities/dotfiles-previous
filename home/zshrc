@@ -30,7 +30,10 @@ fi
 
 export PATH="$HOME/.yarn/bin:$PATH"
 
-eval "$(hub alias -s)"
+
+if [ -x "$(command -v hub)" ]; then
+  eval "$(hub alias -s)"
+fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

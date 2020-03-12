@@ -182,3 +182,19 @@ let g:javascript_plugin_flow = 1
 
 " remap jump back to jive with tmux
 nnoremap <C-J> <C-O>
+
+" Makes devicons and nerdtree icons work
+set encoding=UTF-8
+
+" configure omnicomplete
+set omnifunc=syntaxcomplete#Complete
+
+" remap omnicompletion from cx-co to c-<space>
+imap <C-Space> <C-x><C-o>
+imap <C-@> <C-Space>
+
+" linting
+let g:ale_fixers = {'javascript': ['prettier_standard', 'standard']}
+let g:ale_linters = {'javascript': ['']}
+let g:ale_fix_on_save = 1
+let g:ale_list_window_size = 5

@@ -17,3 +17,6 @@ alias gh="grep_history"
 alias gist="gist --open --private"
 
 alias k="kubectl"
+
+# For windows/putty
+alias tmux="TERM=screen-256color-bce tmux"

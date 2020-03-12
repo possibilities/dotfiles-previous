@@ -3,10 +3,17 @@
 set -e
 
 PLUGIN_REPOS=(
+  # linting
+  'dense-analysis/ale'
+  # typescript check
+  'Quramy/tsuquyomi'
+  # theme
   'jonathanfilip/vim-lucius'
+  # speaks for itself
+  'tpope/vim-markdown'
   'pangloss/vim-javascript'
   'mxw/vim-jsx'
-  'tpope/vim-markdown'
+  'leafgarland/typescript-vim'
   # comment toggling
   'tpope/vim-commentary'
   # nerd tree file explorer
@@ -30,7 +37,7 @@ PLUGIN_REPOS=(
   # vim interface to web api, gist-vim depends on it
   'mattn/webapi-vim'
   # fuzzy file searching
-  'kien/ctrlp.vim'
+  'ctrlpvim/ctrlp.vim'
   # show the block cursor in normal mode, line cursor in insert mode
   'jszakmeister/vim-togglecursor'
   'tpope/vim-classpath'

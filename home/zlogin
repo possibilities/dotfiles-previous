@@ -17,3 +17,5 @@ fi
 if [ $commands[kubectl] ]; then
   source <(kubectl completion zsh)
 fi
+
+export PATH=`echo $PATH | tr ':' '\n' | awk '($0!~/mnt\/c/) {print} ' | tr '\n' ':'`

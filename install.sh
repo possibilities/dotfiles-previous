@@ -5,6 +5,21 @@ set -e
 # include hidden files when globbing
 shopt -s dotglob
 
+sudo apt-get update
+sudo apt-get install --yes git jq tree watch ruby python curl wget tmux zsh
+
+sudo gem install git-smart
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+source ~/.nvm/nvm.sh
+nvm install 12 --lts
+
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+sudo apt update && sudo apt install --no-install-recommends yarn
+
+yarn global add nodemon
+
 # we need directories
 
 echo " - linking dot files into \$HOME"
@@ -44,5 +59,11 @@ done
 
 echo " - deal with vim plugins"
 ./install-vim-plugins.sh || true
+
+cd /tmp
+
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
 echo done

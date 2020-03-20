@@ -33,6 +33,8 @@
     sm = smart-merge
     r = rev-parse
     rs = rev-parse --short
+    brl = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
 
 [color]
     branch = auto

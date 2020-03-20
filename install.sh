@@ -6,9 +6,7 @@ set -e
 shopt -s dotglob
 
 sudo apt-get update
-sudo apt-get install --yes git jq tree watch ruby python curl wget tmux zsh
-
-sudo gem install git-smart
+sudo apt-get install --yes git jq tree watch python curl wget tmux zsh
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh

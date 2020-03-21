@@ -6,7 +6,18 @@ set -e
 shopt -s dotglob
 
 sudo apt-get update
-sudo apt-get install --yes git jq tree watch python curl wget tmux zsh
+sudo apt-get install --yes \
+  git \
+  jq \
+  tree \
+  watch \
+  python \
+  curl \
+  wget \
+  tmux \
+  zsh \
+  git-secret \
+  gist
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh
@@ -60,9 +71,10 @@ echo " - deal with vim plugins"
 
 cd /tmp
 
+rm -rf awscliv2.zip aws
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install || true
-rm awscliv2.zip
+rm -rf awscliv2.zip aws
 
 echo done

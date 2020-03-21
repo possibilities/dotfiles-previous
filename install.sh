@@ -16,8 +16,7 @@ sudo apt-get install --yes \
   wget \
   tmux \
   zsh \
-  git-secret \
-  gist
+  git-secret
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh

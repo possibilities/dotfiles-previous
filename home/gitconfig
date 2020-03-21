@@ -28,9 +28,6 @@
     l  = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
     lg = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph
     lga = log --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset' --graph --all
-    sp = smart-pull
-    sl = smart-log
-    sm = smart-merge
     r = rev-parse
     rs = rev-parse --short
     brl = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
@@ -68,5 +65,3 @@
     email = notimpossiblemike@gmail.com
 [push]
     default = simple
-[github]
-    user = mikebannister-vm

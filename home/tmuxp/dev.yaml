@@ -1,0 +1,26 @@
+session_name: dev
+windows:
+- window_name: app
+  focus: true
+  layout: main-vertical
+  shell_command_before:
+    - cd code/frontend
+  panes:
+    - vim
+    - npm run dev
+    - npm run storybook
+    - echo ready
+- window_name: notes
+  layout: main-vertical
+  shell_command_before:
+    - cd code/notes
+  panes:
+    - vim home.md
+    - nodemon --exec 'git pull && git add . ; git ci -amMisc ; git push -u' --watch home.md
+- window_name: dotfiles
+  layout: main-vertical
+  shell_command_before:
+    - cd code/dotfiles
+  panes:
+    - vim
+    - echo ready

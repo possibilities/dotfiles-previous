@@ -16,11 +16,15 @@ sudo apt-get install --yes \
   wget \
   tmux \
   zsh \
-  git-secret
+  uuid \
+  git-secret \
+  python-pip
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install 12 --lts
+
+pip install --quiet --user tmuxp
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list

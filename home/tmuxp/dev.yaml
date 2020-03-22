@@ -9,7 +9,7 @@ windows:
     - vim
     - npm run dev
     - npm run storybook
-    - echo ready
+    - blank
 - window_name: notes
   layout: main-vertical
   shell_command_before:
@@ -23,4 +23,4 @@ windows:
     - cd code/dotfiles
   panes:
     - vim
-    - echo ready
+    - blank

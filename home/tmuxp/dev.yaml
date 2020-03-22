@@ -6,16 +6,17 @@ windows:
   shell_command_before:
     - cd code/frontend
   panes:
-    - vim
+    - shell_command: vim
+      focus: true
     - npm run dev
     - npm run storybook
-    - blank
 - window_name: notes
   layout: main-vertical
   shell_command_before:
     - cd code/notes
   panes:
-    - vim home.md
+    - shell_command: vim home.md
+      focus: true
     - nodemon --exec 'git pull && git add . ; git ci -amMisc ; git push -u' --watch home.md
 - window_name: dotfiles
   layout: main-vertical
@@ -23,4 +24,3 @@ windows:
     - cd code/dotfiles
   panes:
     - vim
-    - blank

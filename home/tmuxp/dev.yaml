@@ -10,6 +10,7 @@ windows:
       focus: true
     - npm run dev
     - npm run storybook
+    - blank
 - window_name: notes
   layout: main-vertical
   shell_command_before:
@@ -24,3 +25,4 @@ windows:
     - cd code/dotfiles
   panes:
     - vim
+    - blank

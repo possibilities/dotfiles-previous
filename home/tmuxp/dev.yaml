@@ -18,7 +18,7 @@ windows:
   panes:
     - shell_command: vim home.md
       focus: true
-    - nodemon --exec 'git pull && git add . ; git ci -amMisc ; git push -u' --watch home.md
+    - nodemon --exec 'git pull ; git add . ; git ci -amMisc ; git push -u' --watch home.md
 - window_name: dotfiles
   layout: main-vertical
   shell_command_before:

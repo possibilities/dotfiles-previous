@@ -13,7 +13,8 @@ git_info() {
   ! git rev-parse --is-inside-work-tree > /dev/null 2>&1 && return
 
   # Git branch/tag, or name-rev if on detached head
-  local GIT_LOCATION=${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}
+  local SHA1=$(git rev-parse --short HEAD)
+  local GIT_LOCATION="${$(git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD)#(refs/heads/|tags/)}@${SHA1}"
 
   local AHEAD="%{$fg[red]%}⇡NUM%{$reset_color%}"
   local BEHIND="%{$fg[cyan]%}⇣NUM%{$reset_color%}"
@@ -57,7 +58,7 @@ git_info() {
   [ -n "$GIT_STATUS" ] && GIT_INFO+=( "$GIT_STATUS" )
   [[ ${#DIVERGENCES[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)DIVERGENCES}" )
   [[ ${#FLAGS[@]} -ne 0 ]] && GIT_INFO+=( "${(j::)FLAGS}" )
-  GIT_INFO+=( "\033[38;5;15m$GIT_LOCATION%{$reset_color%}" )
+  GIT_INFO+="$GIT_LOCATION"
   echo "${(j: :)GIT_INFO}"
 
 }

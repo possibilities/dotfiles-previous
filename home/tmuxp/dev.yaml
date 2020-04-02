@@ -9,7 +9,6 @@ windows:
     - shell_command: vim
       focus: true
     - yarn dev
-    - yarn storybook
     - blank
 - window_name: notes
   layout: main-vertical

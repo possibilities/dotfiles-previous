@@ -65,3 +65,5 @@
     email = notimpossiblemike@gmail.com
 [push]
     default = simple
+[github]
+  user = mikebannister-vm

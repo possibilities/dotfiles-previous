@@ -8,8 +8,8 @@ windows:
   panes:
     - shell_command: vim
       focus: true
-    - npm run dev
-    - npm run storybook
+    - yarn dev
+    - yarn storybook
     - blank
 - window_name: notes
   layout: main-vertical

@@ -1,7 +1,5 @@
 # misc places we keep binaries
 export PATH=$HOME/local/bin:$PATH
-# allow invoking local npm binaries
-export PATH=node_modules/.bin:$PATH
 # pip uses this when you install with --use
 export PATH=$HOME/.local/bin:$PATH
 export PATH=/usr/local/bin:$PATH

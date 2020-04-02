@@ -50,7 +50,7 @@ set pastetoggle=<F2>
 set number
 " recommended by flagship
 " https://github.com/tpope/vim-flagship/blob/master/doc/flagship.txt
-set laststatus=2
+set laststatus=7
 set showtabline=2
 set guioptions-=e
 

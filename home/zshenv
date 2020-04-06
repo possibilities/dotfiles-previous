@@ -23,6 +23,12 @@ bindkey '^' self-insert-backslash
 function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
 zle -N self-insert-backslash
 
+loadz () {
+  eval $(ssh-agent -s)
+  ssh-add ~/.ssh/id_rsa
+  tmuxp load dev
+}
+
 project_pwd() {
   # TODO figure out how to interpolate $HOME into regex expressio
   # below rather than conditional, etc. Didn't work out-of-the-box

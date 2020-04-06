@@ -196,7 +196,7 @@ imap <C-Space> <C-x><C-o>
 imap <C-@> <C-Space>
 
 " linting
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint']}
+let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier']}
 let g:ale_linters = {'javascript': ['']}
 let g:ale_fix_on_save = 1
 let g:ale_list_window_size = 5

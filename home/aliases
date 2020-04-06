@@ -23,3 +23,4 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 alias loadagent="eval $(ssh-agent -s) ; ssh-add ~/.ssh/id_rsa"
 alias loaddev="tmuxp load dev"
+alias wip="git add .; git commit -am 'wip'"

@@ -1,15 +1,21 @@
+[submodule "home/vim/bundle/ale"]
+	path = home/vim/bundle/ale
+	url = https://github.com/dense-analysis/ale.git
 [submodule "home/vim/bundle/vim-lucius"]
 	path = home/vim/bundle/vim-lucius
 	url = https://github.com/jonathanfilip/vim-lucius.git
+[submodule "home/vim/bundle/vim-markdown"]
+	path = home/vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
 [submodule "home/vim/bundle/vim-javascript"]
 	path = home/vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule "home/vim/bundle/vim-jsx"]
 	path = home/vim/bundle/vim-jsx
 	url = https://github.com/mxw/vim-jsx.git
-[submodule "home/vim/bundle/vim-markdown"]
-	path = home/vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
+[submodule "home/vim/bundle/typescript-vim"]
+	path = home/vim/bundle/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "home/vim/bundle/vim-commentary"]
 	path = home/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
@@ -42,7 +48,7 @@
 	url = https://github.com/mattn/webapi-vim.git
 [submodule "home/vim/bundle/ctrlp.vim"]
 	path = home/vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
 [submodule "home/vim/bundle/vim-togglecursor"]
 	path = home/vim/bundle/vim-togglecursor
 	url = https://github.com/jszakmeister/vim-togglecursor.git
@@ -64,12 +70,3 @@
 [submodule "home/vim/bundle/vim-textobj-entire"]
 	path = home/vim/bundle/vim-textobj-entire
 	url = https://github.com/kana/vim-textobj-entire.git
-[submodule "home/vim/bundle/tsuquyomi"]
-	path = home/vim/bundle/tsuquyomi
-	url = https://github.com/Quramy/tsuquyomi.git
-[submodule "home/vim/bundle/typescript-vim"]
-	path = home/vim/bundle/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim.git
-[submodule "home/vim/bundle/ale"]
-	path = home/vim/bundle/ale
-	url = https://github.com/dense-analysis/ale.git

@@ -6,7 +6,7 @@ PLUGIN_REPOS=(
   # linting
   'dense-analysis/ale'
   # typescript check
-  'Quramy/tsuquyomi'
+  # 'Quramy/tsuquyomi'
   # theme
   'jonathanfilip/vim-lucius'
   # speaks for itself

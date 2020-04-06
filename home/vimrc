@@ -142,14 +142,16 @@ if executable('ag')
   nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 endif
 
-" hide directories named `dist` from Ctrl+P
-" unsure why we have to since it should get .gitignored anyway
-" also should try now that we have `ag` in place, which respects
-" gitignore pretty well
-set wildignore+=*/dist/*
+" " hide directories named `dist` from Ctrl+P
+" " unsure why we have to since it should get .gitignored anyway
+" " also should try now that we have `ag` in place, which respects
+" " gitignore pretty well
+" set wildignore+=*/dist/*
 
-" let .git mark a project boundary
-let g:ctrlp_root_markers = ['.git']
+" " let .git mark a project boundary
+" let g:ctrlp_root_markers = ['.git']
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 if executable('ag')
   " let `ag` be the matcher for ctrlp

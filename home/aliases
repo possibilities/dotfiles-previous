@@ -7,9 +7,9 @@ alias zh='cat $HOME/.zsh_history'
 # apps
 alias g="git"
 alias clone="hub clone"
+alias req="lab merge-request"
 alias t="tmux"
 alias ta="tmux attach"
-alias wr="wr --exec"
 alias ip="curl ifconfig.me/ip"
 alias tnd="tmux_name_window_after_directory"
 alias tn="tmux_name_window"

@@ -7,6 +7,7 @@ shopt -s dotglob
 
 sudo apt-get update
 sudo apt-get install --yes \
+  unzip \
   git \
   jq \
   tree \

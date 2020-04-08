@@ -20,6 +20,8 @@ sudo apt-get install --yes \
   git-secret \
   python-pip
 
+chsh -s $(which zsh)
+
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install 12 --lts

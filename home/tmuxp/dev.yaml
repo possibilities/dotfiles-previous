@@ -9,7 +9,6 @@ windows:
       focus: true
     - yarn dev
     - yarn tsc --watch
-    - wpf 'yarn lint'
 - window_name: notes
   layout: main-vertical
   start_directory: code/notes
@@ -17,8 +16,3 @@ windows:
     - shell_command: vim home.md
       focus: true
     - nodemon --exec 'git pull ; git add . ; git ci -amMisc ; git push -u' --watch home.md
-- window_name: dotfiles
-  layout: main-vertical
-  start_directory: code/dotfiles
-  panes:
-    - vim

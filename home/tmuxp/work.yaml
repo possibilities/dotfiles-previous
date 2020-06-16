@@ -1,6 +1,6 @@
-session_name: dev
+session_name: work
 windows:
-- window_name: app
+- window_name: front
   focus: true
   layout: main-vertical
   start_directory: code/frontend
@@ -9,10 +9,11 @@ windows:
       focus: true
     - yarn dev
     - yarn tsc --watch
+    - watch yarn lint
 - window_name: notes
   layout: main-vertical
   start_directory: code/notes
   panes:
     - shell_command: vim home.md
       focus: true
-    - nodemon --exec 'git pull ; git add . ; git ci -amMisc ; git push -u' --watch home.md
+    - nodemon --exec 'git pull ; git add . && git commit -ammike ; git push' --ext 'js,md,ts,tsx'

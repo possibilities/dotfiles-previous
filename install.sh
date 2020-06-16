@@ -18,6 +18,10 @@ sudo apt-get install --yes \
   tmux \
   zsh \
   uuid \
+  xclip \
+  whois \
+  uuid \
+  vim-gtk \
   git-secret \
   python-pip
 

@@ -8,7 +8,8 @@ PLUGIN_REPOS=(
   # typescript check
   # 'Quramy/tsuquyomi'
   # theme
-  'jonathanfilip/vim-lucius'
+  #'jonathanfilip/vim-lucius'
+  'NLKNguyen/papercolor-theme'
   # speaks for itself
   'tpope/vim-markdown'
   'pangloss/vim-javascript'

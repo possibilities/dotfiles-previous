@@ -82,7 +82,9 @@ syntax enable
 syntax on
 set t_Co=256
 set background=dark
-colors lucius
+colorscheme PaperColor
+" colors lucius
+" LuciusDarkHighContrast
 
 " delete all buffers
 nnoremap <Leader>! :1,999bd<CR>

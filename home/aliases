@@ -20,7 +20,7 @@ alias gist="gist --open --private"
 alias tmux="TERM=screen-256color-bce tmux"
 
 alias loaddev="tmuxp load dev"
-alias wip="git add .; git commit -am 'wip'"
+alias wip="git add .; git commit --no-verify -am 'wip'"
 
 alias rmswp="rm /tmp/*.*.swp"
 

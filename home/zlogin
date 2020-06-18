@@ -12,8 +12,4 @@ if [ $commands[yarn] ]; then
   export PATH="$PATH:`yarn global bin`"
 fi
 
-if [ $commands[kubectl] ]; then
-  source <(kubectl completion zsh)
-fi
-
 export PATH=`echo $PATH | tr ':' '\n' | awk '($0!~/mnt\/c/) {print} ' | tr '\n' ':'`

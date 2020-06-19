@@ -17,7 +17,7 @@
     co = checkout
     pl = log --pretty=oneline
     tree = log --graph --pretty=oneline --decorate
-    pom = push origin master
+    pom = push origin main
     amend = commit --amend -C HEAD
     s = stash --include-untracked
     sa = stash apply

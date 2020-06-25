@@ -21,8 +21,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 
 alias loaddev="tmuxp load dev"
 alias wip="git add .; git commit --no-verify -a -m 'wip'"
-
-alias rmswp="rm /tmp/*.*.swp"
+alias wipush="git add .; git commit --no-verify -a -m 'wip' ; git push origin HEAD -o ci.skip -u"
 
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"

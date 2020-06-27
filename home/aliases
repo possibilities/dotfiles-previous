@@ -3,6 +3,7 @@ alias mkdir='mkdir -p'
 alias no='nodemon -e js,coffee,json --verbose'
 alias watch='watch --no-title'
 alias zh='cat $HOME/.zsh_history'
+alias woman='man'
 
 # apps
 alias g="git"

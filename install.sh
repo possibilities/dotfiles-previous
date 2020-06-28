@@ -23,7 +23,8 @@ sudo apt-get install --yes \
   uuid \
   vim-gtk \
   git-secret \
-  python-pip
+  python3 \
+  python3-pip
 
 chsh -s $(which zsh)
 
@@ -31,7 +32,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.nvm/nvm.sh
 nvm install 12 --lts
 
-pip install --quiet --user tmuxp
+pip3 install --quiet --user tmuxp
 
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -79,12 +80,12 @@ done
 echo " - deal with vim plugins"
 ./install-vim-plugins.sh || true
 
-cd /tmp
+#cd /tmp
 
-rm -rf awscliv2.zip aws
-curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-unzip awscliv2.zip
-sudo ./aws/install || true
-rm -rf awscliv2.zip aws
+#rm -rf awscliv2.zip aws
+#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+#unzip awscliv2.zip
+#sudo ./aws/install || true
+#rm -rf awscliv2.zip aws
 
 echo done

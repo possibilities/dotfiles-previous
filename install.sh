@@ -24,6 +24,7 @@ sudo apt-get install --yes \
   vim-gtk \
   git-secret \
   python3 \
+  awscli \
   python3-pip
 
 chsh -s $(which zsh)
@@ -79,13 +80,5 @@ done
 
 echo " - deal with vim plugins"
 ./install-vim-plugins.sh || true
-
-#cd /tmp
-
-#rm -rf awscliv2.zip aws
-#curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
-#unzip awscliv2.zip
-#sudo ./aws/install || true
-#rm -rf awscliv2.zip aws
 
 echo done

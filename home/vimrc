@@ -199,8 +199,14 @@ imap <C-@> <C-Space>
 
 " linting
 " let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint']}
-" let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier']}
 let g:ale_linters = {'javascript': [], 'typescript': []}
 let g:ale_fix_on_save = 1
 let g:ale_list_window_size = 5
+
+" Highlight tsx
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript
+augroup END

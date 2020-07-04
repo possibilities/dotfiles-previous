@@ -72,6 +72,15 @@ PLUGIN_REPOS=(
   # 'michaeljsmith/vim-indent-object'
 )
 
+# Remove everything first for a clean slate
+rm -rf .gitmodules
+git rm -rf --cached home/vim/bundle/* || true
+rm -rf home/vim/bundle/*
+rm -rf .git/modules/home
+git submodule deinit . || true
+git restore .gitmodules
+
+# Start install
 git submodule update --recursive --init
 
 for PLUGIN_REPO in ${PLUGIN_REPOS[@]}; do

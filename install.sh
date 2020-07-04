@@ -25,7 +25,8 @@ sudo apt-get install --yes \
   git-secret \
   python3 \
   awscli \
-  python3-pip
+  python3-pip \
+  hub
 
 # For puppeteer
 sudo apt-get install --yes \
@@ -74,6 +75,12 @@ if [ -v "$ZSH_NAME" ]; then
   chsh -s $(which zsh)
 else
   echo " - zsh already installed"
+fi
+
+if ! [ -x "$(command -v lab)" ]; then
+  curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh | sudo bash
+else
+  echo " - lab already installed"
 fi
 
 if [ -d "${HOME}/.nvm" ] 

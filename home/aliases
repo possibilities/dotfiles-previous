@@ -29,3 +29,5 @@ alias pbpaste="xclip -selection clipboard -o"
 
 alias mroldefashioned="lab mr create --remove-source-branch --squash"
 alias mr="lab mr create origin main --remove-source-branch --squash"
+
+alias git=lab

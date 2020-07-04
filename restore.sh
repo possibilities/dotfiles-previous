@@ -14,6 +14,7 @@ tar -p -xf ${BACKUP_PATH} home/mike/.zsh_history
 tar -p -xf ${BACKUP_PATH} home/mike/.ssh
 tar -p -xf ${BACKUP_PATH} home/mike/.config/hub
 tar -p -xf ${BACKUP_PATH} home/mike/.config/lab.hcl
+tar -p -xf ${BACKUP_PATH} home/mike/.docker/config.json
 echo copying code
 tar -p -xf ${BACKUP_PATH} home/mike/code
 echo copying src

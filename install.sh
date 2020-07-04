@@ -26,7 +26,9 @@ sudo apt-get install --yes \
   python3 \
   awscli \
   python3-pip \
-  hub
+  hub \
+  gnupg2 \
+  pass
 
 # For puppeteer
 sudo apt-get install --yes \

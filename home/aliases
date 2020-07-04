@@ -1,7 +1,7 @@
 # Utils
 alias mkdir='mkdir -p'
 alias no='nodemon -e js,coffee,json --verbose'
-alias watch='watch --no-title'
+alias watch='watch --no-title '
 alias zh='cat $HOME/.zsh_history'
 alias woman='man'
 
@@ -28,3 +28,5 @@ alias pbpaste="xclip -selection clipboard -o"
 
 alias mr="lab mr create origin main --remove-source-branch --squash"
 alias pr="hub pull-request"
+alias wts="nodemon --exec 'yarn tsc' --ext 'ts,tsx'"
+alias wl="nodemon --exec 'yarn lint' --ext 'ts,tsx,js'"

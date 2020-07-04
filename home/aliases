@@ -1,6 +1,7 @@
 # Utils
 alias mkdir='mkdir -p'
 alias no='nodemon -e js,coffee,json --verbose'
+# note trailing space is needed to support watching aliased commands
 alias watch='watch --no-title '
 alias zh='cat $HOME/.zsh_history'
 alias woman='man'

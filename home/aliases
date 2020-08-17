@@ -21,7 +21,7 @@ alias gist="gist --open --private"
 alias tmux="TERM=screen-256color-bce tmux"
 
 alias loaddev="tmuxp load dev"
-alias wip="git add .; git commit --no-verify -a -m 'wip'"
+alias wip="git add .; git commit --no-verify -a -m 'wip [skip ci]'"
 alias wipush="git add .; git commit --no-verify -a -m 'wip [skip ci]' ; git push"
 
 alias pbcopy="xclip -selection clipboard"

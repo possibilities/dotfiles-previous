@@ -67,3 +67,5 @@
     default = simple
 [github]
   user = possibilities
+[init]
+	defaultBranch = main

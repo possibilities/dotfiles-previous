@@ -73,3 +73,6 @@
 [submodule "home/vim/bundle/papercolor-theme"]
 	path = home/vim/bundle/papercolor-theme
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule "home/vim/bundle/vim-carbon-now-sh"]
+	path = home/vim/bundle/vim-carbon-now-sh
+	url = https://github.com/kristijanhusak/vim-carbon-now-sh.git

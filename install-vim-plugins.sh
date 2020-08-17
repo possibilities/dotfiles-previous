@@ -3,6 +3,7 @@
 set -e
 
 PLUGIN_REPOS=(
+  'kristijanhusak/vim-carbon-now-sh'
   # linting
   'dense-analysis/ale'
   # typescript check

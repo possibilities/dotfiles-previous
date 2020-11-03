@@ -27,6 +27,7 @@ PLUGIN_REPOS=(
   # vim and git make love
   'tpope/vim-fugitive'
   'tpope/vim-rhubarb'
+  'shumphrey/fugitive-gitlab.vim'
   # enable repeating supported plugin maps with "."
   'tpope/vim-repeat'
   # pairs of handy bracket mappings

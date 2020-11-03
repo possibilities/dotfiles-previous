@@ -210,3 +210,5 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
+
+let @c = 'YjjP€ýa'

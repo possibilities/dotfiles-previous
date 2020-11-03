@@ -16,6 +16,7 @@
     dfc = diff --cached
     co = checkout
     pl = log --pretty=oneline
+    pls = log --pretty=oneline -5
     tree = log --graph --pretty=oneline --decorate
     pom = push origin main
     amend = commit --amend -C HEAD

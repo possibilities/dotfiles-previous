@@ -76,3 +76,6 @@
 [submodule "home/vim/bundle/vim-carbon-now-sh"]
 	path = home/vim/bundle/vim-carbon-now-sh
 	url = https://github.com/kristijanhusak/vim-carbon-now-sh.git
+[submodule "home/vim/bundle/fugitive-gitlab.vim"]
+	path = home/vim/bundle/fugitive-gitlab.vim
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git

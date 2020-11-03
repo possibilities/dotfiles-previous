@@ -6,7 +6,7 @@ cd $HOME
 
 STAMP=$(date +"%s")
 
-tar -pzcvf /mnt/f/backup.${STAMP}.tgz \
+tar -pzcvf /mnt/d/backup.${STAMP}.tgz \
   --exclude='.m2' \
   --exclude='.next' \
   --exclude='.vscode-server' \

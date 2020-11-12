@@ -106,33 +106,6 @@ curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 sudo apt update && sudo apt install --no-install-recommends yarn
 
-echo " - installing apps globally from npm"
-if ! [ -x "$(command -v sloc)" ]; then
-  yarn global add sloc
-else
-  echo " - sloc already installed"
-fi
-if ! [ -x "$(command -v nodemon)" ]; then
-  yarn global add nodemon
-else
-  echo " - nodemon already installed"
-fi
-if ! [ -x "$(command -v sloc)" ]; then
-  yarn global add serve
-else
-  echo " - serve already installed"
-fi
-
-IS_HYPERFINE_INSTALLED="$(command -v hyperfine)"
-if ! [ -x ${IS_HYPERFINE_INSTALLED} ]; then
-  wget \
-    https://github.com/sharkdp/hyperfine/releases/download/v1.10.0/hyperfine_1.10.0_amd64.deb \
-    -O /tmp/hyperfine.deb
-  sudo dpkg -i /tmp/hyperfine.deb
-else
-  echo " - hyperfine already installed"
-fi
-
 echo " - linking dot files into \$HOME"
 
 for file in home/*
@@ -169,11 +142,23 @@ do
 done
 
 echo " - deal with vim plugins"
-./install-vim-plugins.sh || true
+#./install-vim-plugins.sh || true
 
-if ! [ -x ${IS_HYPERFINE_INSTALLED} ]; then
-  echo WARNINGS:
-  echo  " - INSTALLED HYPERFINE HARDCODED VERSION NUMBER, SEE dotfiles/install.sh"
+echo " - installing apps globally from npm"
+if ! [ -x "$(command -v sloc)" ]; then
+  yarn global add sloc
+else
+  echo " - sloc already installed"
+fi
+if ! [ -x "$(command -v nodemon)" ]; then
+  yarn global add nodemon
+else
+  echo " - nodemon already installed"
+fi
+if ! [ -x "$(command -v sloc)" ]; then
+  yarn global add serve
+else
+  echo " - serve already installed"
 fi
 
 echo

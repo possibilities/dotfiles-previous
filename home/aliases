@@ -27,7 +27,7 @@ alias wipush="git add .; git commit --no-verify -a -m 'wip [skip ci]' ; git push
 alias pbcopy="xclip -selection clipboard"
 alias pbpaste="xclip -selection clipboard -o"
 
-alias mr="lab mr create origin main --remove-source-branch --squash"
+alias mr="lab mr create origin develop --remove-source-branch --squash"
 alias pr="hub pull-request"
 alias wts="nodemon --exec 'yarn tsc' --ext 'ts,tsx'"
 alias wl="nodemon --exec 'yarn lint' --ext 'ts,tsx,js'"

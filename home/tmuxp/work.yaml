@@ -17,3 +17,28 @@ windows:
     - shell_command: vim live.md
       focus: true
     - nodemon --exec 'git pull ; git add . && git commit -ammike ; git push' --ext 'js,md,ts,tsx'
+- window_name: bff-client
+  layout: main-vertical
+  start_directory: code/bff-client
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn test:watch
+    - yarn dev
+    - yarn types:watch
+    - yarn lint:watch
+- window_name: vmd
+  layout: main-vertical
+  start_directory: code/vmd
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev
+    - yarn types:watch
+    - yarn lint:watch
+- window_name: dotfiles
+  layout: main-vertical
+  start_directory: code/dotfiles
+  panes:
+    - shell_command: vim
+      focus: true

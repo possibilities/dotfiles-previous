@@ -10,6 +10,14 @@ windows:
     - yarn dev
     - yarn types:watch
     - yarn lint:watch
+- window_name: e2e
+  focus: true
+  layout: main-vertical
+  start_directory: code/e2e-tests
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn test
 - window_name: notes
   layout: main-vertical
   start_directory: code/notes

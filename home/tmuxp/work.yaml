@@ -12,7 +12,6 @@ windows:
     - yarn types:watch
     - yarn lint:watch
 - window_name: e2e
-  focus: true
   layout: main-vertical
   start_directory: code/e2e-tests
   panes:

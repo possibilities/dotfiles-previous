@@ -98,9 +98,6 @@ noremap <Leader>m :update<CR>
 " quick save + quit
 noremap <Leader>n :update<CR>:quit<CR>
 
-noremap <Leader>j :cprev<CR>
-noremap <Leader>k :cnext<CR>
-
 " a binding for closing things, closes:
 " * the current buffer :bd
 " * the quickfix list :lclose
@@ -115,14 +112,6 @@ let g:gist_get_multiplefile = 1
 " more history
 set history=200
 
-" better history scrolling
-cnoremap <C-p> <Up>
-cnoremap <C-n> <Down>
-
-" easy splitting
-nnoremap <silent> vv :vsplit<CR>
-nnoremap <silent> ff :split<CR>
-
 " make doing things with git and github easier
 nnoremap <silent> <leader>B <CR>:Gbrowse<CR>
 nnoremap <silent> <leader>G :Gist<CR>
@@ -131,18 +120,15 @@ nnoremap <silent> <leader>G :Gist<CR>
 nnoremap <silent> <leader>e :Explore<CR>
 nnoremap <silent> <space> :e.<CR>
 
+" remap jump back and forward to jive with tmux
+nnoremap <silent> bb <C-O>
+nnoremap <silent> ff <C-I>
+
 " setup vim markdown
 let g:vim_markdown_folding_disabled=1
 
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
-
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-  " bind K to grep word under cursor with Ag
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-endif
 
 " " hide directories named `dist` from Ctrl+P
 " " unsure why we have to since it should get .gitignored anyway
@@ -155,17 +141,6 @@ endif
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-if executable('ag')
-  " let `ag` be the matcher for ctrlp
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
-" bind \ (backward slash) to grep shortcut
-command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ag<SPACE>
-
 " NERDTree
 let NERDTreeChDirMode=2
 let NERDTreeWinSize=35
@@ -176,29 +151,10 @@ nmap <silent> <Space> :NERDTreeToggle<CR>
 " toggle all gutters
 nnoremap <leader>g :GitGutterToggle<CR>:set nonumber!<CR>
 
-" fix clipboard on sierra
-" See https://stackoverflow.com/questions/39645253/clipboard-failure-in-tmux-vim-after-upgrading-to-macos-sierra
-set clipboard+=unnamed
-
-" js stuff
-let g:jsx_ext_required = 0
-let g:javascript_plugin_flow = 1
-
-" remap jump back to jive with tmux
-nnoremap <C-J> <C-O>
-
 " Makes devicons and nerdtree icons work
 set encoding=UTF-8
 
-" configure omnicomplete
-set omnifunc=syntaxcomplete#Complete
-
-" remap omnicompletion from cx-co to c-<space>
-imap <C-Space> <C-x><C-o>
-imap <C-@> <C-Space>
-
 " linting
-" let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'typescript': ['prettier', 'eslint']}
 let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier']}
 let g:ale_linters = {'javascript': [], 'typescript': []}
@@ -210,5 +166,3 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
-
-let @c = 'YjjP€ýa'

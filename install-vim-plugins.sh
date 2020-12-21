@@ -3,9 +3,9 @@
 set -e
 
 PLUGIN_REPOS=(
-  'kristijanhusak/vim-carbon-now-sh'
+  # 'kristijanhusak/vim-carbon-now-sh'
   # linting
-  'dense-analysis/ale'
+  # 'dense-analysis/ale'
   # typescript check
   # 'Quramy/tsuquyomi'
   # theme

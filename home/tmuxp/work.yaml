@@ -11,13 +11,6 @@ windows:
     - yarn test:watch
     - yarn types:watch
     - yarn lint:watch
-- window_name: e2e
-  layout: main-vertical
-  start_directory: code/e2e-tests
-  panes:
-    - shell_command: vim
-      focus: true
-    - yarn test
 - window_name: notes
   layout: main-vertical
   start_directory: code/notes
@@ -25,6 +18,13 @@ windows:
     - shell_command: vim live.md
       focus: true
     - nodemon --exec 'git pull ; git add . && git commit -ammike ; git push' --ext 'js,md,ts,tsx'
+- window_name: e2e
+  layout: main-vertical
+  start_directory: code/e2e-tests
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn test
 - window_name: vmd
   layout: main-vertical
   start_directory: code/vmd

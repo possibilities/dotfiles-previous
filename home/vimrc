@@ -83,11 +83,12 @@ syntax on
 set t_Co=256
 set background=dark
 colorscheme PaperColor
-" colors lucius
-" LuciusDarkHighContrast
 
-" delete all buffers
-nnoremap <Leader>! :1,999bd<CR>
+" netrw
+" tree style listings by default
+let g:netrw_liststyle = 3
+" easy access
+nmap <silent> <Space> :e.<CR>
 
 " next buffer
 nnoremap <silent> <S-Tab> :bp<CR>
@@ -112,14 +113,6 @@ let g:gist_get_multiplefile = 1
 " more history
 set history=200
 
-" make doing things with git and github easier
-nnoremap <silent> <leader>B <CR>:Gbrowse<CR>
-nnoremap <silent> <leader>G :Gist<CR>
-
-" some shortcuts for file navigation
-nnoremap <silent> <leader>e :Explore<CR>
-nnoremap <silent> <space> :e.<CR>
-
 " remap jump back and forward to jive with tmux
 nnoremap <silent> bb <C-O>
 nnoremap <silent> ff <C-I>
@@ -130,32 +123,9 @@ let g:vim_markdown_folding_disabled=1
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
-" " hide directories named `dist` from Ctrl+P
-" " unsure why we have to since it should get .gitignored anyway
-" " also should try now that we have `ag` in place, which respects
-" " gitignore pretty well
-" set wildignore+=*/dist/*
-
-" " let .git mark a project boundary
-" let g:ctrlp_root_markers = ['.git']
-
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" NERDTree
-let NERDTreeChDirMode=2
-let NERDTreeWinSize=35
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-nmap <silent> <Space> :NERDTreeToggle<CR>
-
-" toggle all gutters
-nnoremap <leader>g :GitGutterToggle<CR>:set nonumber!<CR>
-
-" Makes devicons and nerdtree icons work
-set encoding=UTF-8
-
 " linting
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['eslint']}
 let g:ale_fixers = {'javascript': ['prettier'], 'typescript': ['prettier']}
 let g:ale_linters = {'javascript': [], 'typescript': []}
 let g:ale_fix_on_save = 1

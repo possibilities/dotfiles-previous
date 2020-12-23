@@ -20,7 +20,7 @@ PLUGIN_REPOS=(
   # comment toggling
   'tpope/vim-commentary'
   # nerd tree file explorer
-  'scrooloose/nerdtree'
+  # 'scrooloose/nerdtree'
   # surround things with things
   'tpope/vim-surround'
   # nice minimal/pluggable statusline
@@ -52,7 +52,7 @@ PLUGIN_REPOS=(
   # navigate tmux and vim splits seamlessly
   'christoomey/vim-tmux-navigator'
   # show hex and rgb colors inline
-  'ap/vim-css-color'
+  # 'ap/vim-css-color'
   # enable text object user plugins
   'kana/vim-textobj-user'
   # ae/ie for the entire region of the current buffer

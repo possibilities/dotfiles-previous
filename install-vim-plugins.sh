@@ -20,7 +20,7 @@ PLUGIN_REPOS=(
   # comment toggling
   'tpope/vim-commentary'
   # nerd tree file explorer
-  # 'scrooloose/nerdtree'
+  'scrooloose/nerdtree'
   # surround things with things
   'tpope/vim-surround'
   # nice minimal/pluggable statusline

@@ -17,6 +17,5 @@ tar -pzcvf /mnt/d/backup.${STAMP}.tgz \
   --exclude='node_modules' \
   --exclude='desktop.ini' \
   ${HOME} \
-  /mnt/c/Users/mike/Documents/ShareX \
   /mnt/c/Users/mike/Local\ Settings/Application\ Data/Mizage\ LLC/Divvy \
   /mnt/c/Users/mike/AppData/Roaming/Microsoft/Windows/Start\ Menu/Programs/Startup

@@ -84,15 +84,16 @@ set t_Co=256
 set background=dark
 colorscheme PaperColor
 
-" netrw
-" tree style listings by default
-let g:netrw_liststyle = 3
-" easy access
-nmap <silent> <Space> :e.<CR>
-
 " next buffer
 nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <silent> <Tab> :bn<CR>
+
+" NERDTree
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+nmap <silent> <Space> :NERDTreeToggle<CR>
 
 " quick save
 noremap <Leader>m :update<CR>

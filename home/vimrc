@@ -1,13 +1,61 @@
+call plug#begin('~/.vim/plugged')
+
+" nerd tree file explorer
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'NLKNguyen/pipe.vim'
+Plug 'NLKNguyen/pipe-mysql.vim'
+Plug 'blueyed/vim-qf_resize'
+Plug 'tommcdo/vim-exchange'
+Plug 'tommcdo/vim-fugitive-blame-ext'
+" linting
+Plug 'dense-analysis/ale'
+" theme
+Plug 'NLKNguyen/papercolor-theme'
+" speaks for itself
+Plug 'tpope/vim-markdown'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+" comment toggling
+Plug 'tpope/vim-commentary'
+" surround things with things
+Plug 'tpope/vim-surround'
+" nice minimal/pluggable statusline
+Plug 'tpope/vim-flagship'
+" vim and git make love
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
+" enable repeating supported plugin maps with "."
+Plug 'tpope/vim-repeat'
+" pairs of handy bracket mappings
+Plug 'tpope/vim-unimpaired'
+" gist magic
+Plug 'mattn/gist-vim'
+" vim interface to web api, gist-vim depends on it
+Plug 'mattn/webapi-vim'
+" fuzzy file searching
+Plug 'ctrlpvim/ctrlp.vim'
+" show the block cursor in normal mode, line cursor in insert mode
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'tpope/vim-classpath'
+" show vim status in gutter
+Plug 'airblade/vim-gitgutter'
+" navigate tmux and vim splits seamlessly
+Plug 'christoomey/vim-tmux-navigator'
+" enable text object user plugins
+Plug 'kana/vim-textobj-user'
+" ae/ie for the entire region of the current buffer
+Plug 'kana/vim-textobj-entire'
+
+call plug#end()
+
 set nocompatible
 
 " leader
 let mapleader=','
 
-" pathogen
 filetype plugin on
-
-call pathogen#helptags()
-call pathogen#infect()
 
 filetype indent plugin on
 
@@ -64,6 +112,9 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+" more history
+set history=200
+
 " backups
 " via http://www.gmarks.org/vi_backups.html
 set backup
@@ -77,23 +128,9 @@ set backupdir=~/.vim/backups/
 " swap files
 set directory=./.vim/backups,/tmp
 
-" colors
-syntax enable
-syntax on
-set t_Co=256
-set background=dark
-colorscheme PaperColor
-
 " next buffer
 nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <silent> <Tab> :bn<CR>
-
-" NERDTree
-let NERDTreeChDirMode=2
-let NERDTreeWinSize=35
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-nmap <silent> <Space> :NERDTreeToggle<CR>
 
 " quick save
 noremap <Leader>m :update<CR>
@@ -105,24 +142,35 @@ noremap <Leader>n :update<CR>:quit<CR>
 " * the quickfix list :lclose
 noremap Q :bd<CR>:lclose<CR>
 
+" remap jump back and forward to jive with tmux
+nnoremap <silent> bb <C-O>
+nnoremap <silent> ff <C-I>
+
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" colors
+syntax enable
+syntax on
+set t_Co=256
+set background=dark
+colorscheme PaperColor
+
+" NERDTree
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+nmap <silent> <Space> :NERDTreeToggle<CR>
+
 " setup gist
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
 let g:gist_detect_filetype = 1
 let g:gist_get_multiplefile = 1
 
-" more history
-set history=200
-
-" remap jump back and forward to jive with tmux
-nnoremap <silent> bb <C-O>
-nnoremap <silent> ff <C-I>
-
 " setup vim markdown
 let g:vim_markdown_folding_disabled=1
-
-" select last paste in visual mode
-nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
@@ -137,3 +185,11 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
+
+let g:pipemysql_login_info = [
+                             \ {
+                             \    'description' : 'dev',
+                             \    'mysql_hostname' : '172.18.2.4',
+                             \    'mysql_username' : 'mbannister',
+                             \ }
+                           \ ]

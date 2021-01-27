@@ -2,5 +2,10 @@
 home/vim/backups
 !home/vim/backups/.keep
 
+home/vim/plugged
+!home/vim/plugged/.keep
+
+home/vim/autoload
+
 # temps
 home/vim/.netrwhist

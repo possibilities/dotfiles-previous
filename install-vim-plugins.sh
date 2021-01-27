@@ -3,7 +3,11 @@
 set -e
 
 PLUGIN_REPOS=(
+  'NLKNguyen/pipe.vim'
+  'NLKNguyen/pipe-mysql.vim'
+  'blueyed/vim-qf_resize'
   'tommcdo/vim-exchange'
+  'tommcdo/vim-fugitive-blame-ext'
   # 'kristijanhusak/vim-carbon-now-sh'
   # linting
   'dense-analysis/ale'
@@ -81,7 +85,6 @@ git rm -rf --cached home/vim/bundle/* || true
 rm -rf home/vim/bundle/*
 rm -rf .git/modules/home
 git submodule deinit . || true
-git restore .gitmodules
 
 # Start install
 git submodule update --recursive --init

@@ -1,9 +1,24 @@
+[submodule "home/vim/bundle/pipe.vim"]
+	path = home/vim/bundle/pipe.vim
+	url = https://github.com/NLKNguyen/pipe.vim.git
+[submodule "home/vim/bundle/pipe-mysql.vim"]
+	path = home/vim/bundle/pipe-mysql.vim
+	url = https://github.com/NLKNguyen/pipe-mysql.vim.git
+[submodule "home/vim/bundle/vim-qf_resize"]
+	path = home/vim/bundle/vim-qf_resize
+	url = https://github.com/blueyed/vim-qf_resize.git
+[submodule "home/vim/bundle/vim-exchange"]
+	path = home/vim/bundle/vim-exchange
+	url = https://github.com/tommcdo/vim-exchange.git
+[submodule "home/vim/bundle/vim-fugitive-blame-ext"]
+	path = home/vim/bundle/vim-fugitive-blame-ext
+	url = https://github.com/tommcdo/vim-fugitive-blame-ext.git
 [submodule "home/vim/bundle/ale"]
 	path = home/vim/bundle/ale
 	url = https://github.com/dense-analysis/ale.git
-[submodule "home/vim/bundle/vim-lucius"]
-	path = home/vim/bundle/vim-lucius
-	url = https://github.com/jonathanfilip/vim-lucius.git
+[submodule "home/vim/bundle/papercolor-theme"]
+	path = home/vim/bundle/papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme.git
 [submodule "home/vim/bundle/vim-markdown"]
 	path = home/vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
@@ -34,6 +49,9 @@
 [submodule "home/vim/bundle/vim-rhubarb"]
 	path = home/vim/bundle/vim-rhubarb
 	url = https://github.com/tpope/vim-rhubarb.git
+[submodule "home/vim/bundle/fugitive-gitlab.vim"]
+	path = home/vim/bundle/fugitive-gitlab.vim
+	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
 [submodule "home/vim/bundle/vim-repeat"]
 	path = home/vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -61,27 +79,9 @@
 [submodule "home/vim/bundle/vim-tmux-navigator"]
 	path = home/vim/bundle/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator.git
-[submodule "home/vim/bundle/vim-css-color"]
-	path = home/vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
 [submodule "home/vim/bundle/vim-textobj-user"]
 	path = home/vim/bundle/vim-textobj-user
 	url = https://github.com/kana/vim-textobj-user.git
 [submodule "home/vim/bundle/vim-textobj-entire"]
 	path = home/vim/bundle/vim-textobj-entire
 	url = https://github.com/kana/vim-textobj-entire.git
-[submodule "home/vim/bundle/papercolor-theme"]
-	path = home/vim/bundle/papercolor-theme
-	url = https://github.com/NLKNguyen/papercolor-theme.git
-[submodule "home/vim/bundle/vim-carbon-now-sh"]
-	path = home/vim/bundle/vim-carbon-now-sh
-	url = https://github.com/kristijanhusak/vim-carbon-now-sh.git
-[submodule "home/vim/bundle/fugitive-gitlab.vim"]
-	path = home/vim/bundle/fugitive-gitlab.vim
-	url = https://github.com/shumphrey/fugitive-gitlab.vim.git
-[submodule "home/vim/bundle/vim-exchange"]
-	path = home/vim/bundle/vim-exchange
-	url = https://github.com/tommcdo/vim-exchange.git
-[submodule "home/vim/bundle/gundo.vim"]
-	path = home/vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim.git

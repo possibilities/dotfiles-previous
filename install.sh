@@ -26,9 +26,15 @@ sudo apt-get install --yes \
   python3 \
   awscli \
   python3-pip \
-  hub \
   gnupg2 \
   pass
+
+  # TODO re-add in some way, doesn't work on ubuntu vm
+  # hub \
+
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update
+sudo apt install git
 
 # For puppeteer
 sudo apt-get install --yes \

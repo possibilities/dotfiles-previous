@@ -185,11 +185,3 @@ augroup SyntaxSettings
     autocmd!
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript
 augroup END
-
-let g:pipemysql_login_info = [
-                             \ {
-                             \    'description' : 'dev',
-                             \    'mysql_hostname' : '172.18.2.4',
-                             \    'mysql_username' : 'mbannister',
-                             \ }
-                           \ ]

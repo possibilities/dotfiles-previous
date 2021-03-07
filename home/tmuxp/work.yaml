@@ -3,7 +3,7 @@ windows:
 - window_name: front
   focus: true
   layout: main-vertical
-  start_directory: code/frontend
+  start_directory: code/quote-app-ui
   panes:
     - shell_command: vim
       focus: true
@@ -25,18 +25,36 @@ windows:
     - shell_command: vim
       focus: true
     - yarn test
-# - window_name: vmd
-#   layout: main-vertical
-#   start_directory: code/vmd
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - yarn dev
-#     - yarn types:watch
-#     - yarn lint:watch
+- window_name: debug
+  focus: true
+  layout: main-vertical
+  start_directory: code/quote-app-debug
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev --port 2222
+- window_name: fixtures
+  layout: main-vertical
+  start_directory: code/fixtures
+  panes:
+    - shell_command: vim
+      focus: true
+- window_name: db
+  layout: main-vertical
+  start_directory: code/notes
+  panes:
+    - shell_command: vim queries.mysql
+      focus: true
 - window_name: dotfiles
   layout: main-vertical
   start_directory: code/dotfiles
+  panes:
+    - shell_command: vim
+      focus: true
+- window_name: qac
+  focus: true
+  layout: main-vertical
+  start_directory: code/quote-app-common
   panes:
     - shell_command: vim
       focus: true

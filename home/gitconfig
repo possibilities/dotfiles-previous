@@ -69,3 +69,5 @@
   user = possibilities
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true

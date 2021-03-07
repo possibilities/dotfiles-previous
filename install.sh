@@ -32,9 +32,9 @@ sudo apt-get install --yes \
   # TODO re-add in some way, doesn't work on ubuntu vm
   # hub \
 
-sudo add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/ppa --yes
 sudo apt update
-sudo apt install git
+sudo apt install git --yes
 
 # For puppeteer
 sudo apt-get install --yes \
@@ -167,5 +167,6 @@ else
   echo " - serve already installed"
 fi
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo
 echo ALL DONE, COMPLETE, OK, NICE, WORD, HAVE FUN SUCKA

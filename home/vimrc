@@ -36,8 +36,6 @@ Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 " fuzzy file searching
 Plug 'ctrlpvim/ctrlp.vim'
-" show the block cursor in normal mode, line cursor in insert mode
-Plug 'jszakmeister/vim-togglecursor'
 Plug 'tpope/vim-classpath'
 " show vim status in gutter
 Plug 'airblade/vim-gitgutter'
@@ -73,7 +71,7 @@ set incsearch
 set expandtab
 set ai
 set copyindent
-set wrap
+set nowrap
 set ruler
 set backspace=eol,start,indent
 set cmdwinheight=15
@@ -97,8 +95,7 @@ set expandtab
 set pastetoggle=<F2>
 set number
 " recommended by flagship
-" https://github.com/tpope/vim-flagship/blob/master/doc/flagship.txt
-set laststatus=7
+set laststatus=2
 set showtabline=2
 set guioptions-=e
 

@@ -1,6 +1,6 @@
 # connect to xserver on host (WSL specific)
-export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
-export DISPLAY=${WSL_HOST_IP}:0.0
+# export WSL_HOST_IP=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}')
+# export DISPLAY=${WSL_HOST_IP}:0.0
 # some fucking bullshit about WSL not working correctly with webpack dev server (seen when playing with braid and/or playroom)
 export PATH=$PATH:/mnt/c/Windows/System32
 # misc places we keep binaries

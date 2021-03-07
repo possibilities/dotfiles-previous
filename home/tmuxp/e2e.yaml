@@ -1,0 +1,35 @@
+session_name: e2e
+windows:
+# - window_name: tests
+#   focus: true
+#   layout: main-vertical
+#   start_directory: code/e2e-tests-ii
+#   panes:
+#     - shell_command: vim
+#       focus: true
+#     - yarn dev
+#     # - yarn test:watch
+#     # - yarn types:watch
+#     # - yarn lint:watch
+- window_name: template
+  layout: main-vertical
+  focus: true
+  start_directory: code/e2e-template
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev
+- window_name: browser
+  layout: main-vertical
+  start_directory: code/e2e-event-browser
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev --port 4444
+- window_name: template-example
+  layout: main-vertical
+  start_directory: code/e2e-template-example-app
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev --port 5555

@@ -8,7 +8,6 @@ windows:
     - shell_command: vim
       focus: true
     - yarn dev
-    - yarn test:watch
     - yarn types:watch
     - yarn lint:watch
 - window_name: notes

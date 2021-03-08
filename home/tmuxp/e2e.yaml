@@ -1,16 +1,5 @@
 session_name: e2e
 windows:
-# - window_name: tests
-#   focus: true
-#   layout: main-vertical
-#   start_directory: code/e2e-tests-ii
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - yarn dev
-#     # - yarn test:watch
-#     # - yarn types:watch
-#     # - yarn lint:watch
 - window_name: template
   layout: main-vertical
   focus: true
@@ -19,6 +8,8 @@ windows:
     - shell_command: vim
       focus: true
     - yarn dev
+    - yarn types:watch
+    - yarn lint:watch
 - window_name: browser
   layout: main-vertical
   start_directory: code/e2e-event-browser
@@ -26,6 +17,17 @@ windows:
     - shell_command: vim
       focus: true
     - yarn dev --port 4444
+    - yarn types:watch
+    - yarn lint:watch
+- window_name: hydrator
+  layout: main-vertical
+  start_directory: code/e2e-browser-events-elasticsearch-hydrator
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev
+    - yarn types:watch
+    - yarn lint:watch
 - window_name: template-example
   layout: main-vertical
   start_directory: code/e2e-template-example-app
@@ -33,3 +35,5 @@ windows:
     - shell_command: vim
       focus: true
     - yarn dev --port 5555
+    - yarn types:watch
+    - yarn lint:watch

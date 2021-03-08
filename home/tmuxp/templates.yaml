@@ -1,0 +1,26 @@
+# next-template
+# node-typescript-template
+# typescript-hooks-library-template
+
+
+session_name: templates
+windows:
+- window_name: next
+  layout: main-vertical
+  focus: true
+  start_directory: code/next-template
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn dev --port 7777
+    - yarn types:watch
+    - yarn lint:watch
+- window_name: node-typescript
+  layout: main-vertical
+  focus: true
+  start_directory: code/node-typescript-template
+  panes:
+    - shell_command: vim
+      focus: true
+    - yarn types:watch
+    - yarn lint:watch

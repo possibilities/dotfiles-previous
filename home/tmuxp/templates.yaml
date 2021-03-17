@@ -1,9 +1,4 @@
-# next-template
-# node-typescript-template
-# typescript-hooks-library-template
-
-
-session_name: templates
+session_name: tmplz
 windows:
 - window_name: next
   layout: main-vertical

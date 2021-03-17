@@ -1,0 +1,20 @@
+session_name: events
+windows:
+- window_name: ui
+  focus: true
+  layout: main-vertical
+  start_directory: code/events-ui
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(env.sh) yarn dev --port 4444
+    - yarn lint:watch
+- window_name: api
+  layout: main-vertical
+  start_directory: code/events-api
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(env.sh) yarn dev
+    - yarn test:watch
+    - yarn lint:watch

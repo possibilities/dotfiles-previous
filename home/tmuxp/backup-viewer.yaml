@@ -1,4 +1,4 @@
-session_name: backup-viewer
+session_name: bakup
 windows:
 - window_name: viewer
   layout: main-vertical

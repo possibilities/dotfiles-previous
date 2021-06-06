@@ -139,10 +139,6 @@ noremap <Leader>n :update<CR>:quit<CR>
 " * the quickfix list :lclose
 noremap Q :bd<CR>:lclose<CR>
 
-" remap jump back and forward to jive with tmux
-nnoremap <silent> bb <C-O>
-nnoremap <silent> ff <C-I>
-
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 

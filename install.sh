@@ -98,6 +98,7 @@ else
   echo " - installing nvm"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
   source ~/.nvm/nvm.sh
+  nvm install 12 --lts
   nvm install 14 --lts
 fi
 
@@ -166,6 +167,9 @@ if ! [ -x "$(command -v sloc)" ]; then
 else
   echo " - serve already installed"
 fi
+
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo

@@ -98,7 +98,7 @@ else
   echo " - installing nvm"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
   source ~/.nvm/nvm.sh
-  nvm install 12 --lts
+  nvm install 14 --lts
 fi
 
 if ! [ -x "$(command -v tmuxp)" ]; then

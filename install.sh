@@ -168,9 +168,20 @@ else
   echo " - serve already installed"
 fi
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+if [ -d "${HOME}/.powerlevel10k" ]
+then
+  echo " - power level 10k already installed"
+else
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
+  echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+fi
 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ -f "${HOME}/.vim/autoload/plug.vim" ]
+then
+  echo " - vim plug already installed"
+else
+  curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+
 echo
 echo ALL DONE, COMPLETE, OK, NICE, WORD, HAVE FUN SUCKA

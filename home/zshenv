@@ -23,17 +23,6 @@ bindkey '^' self-insert-backslash
 function self-insert-backslash() { LBUFFER+='\'; zle .self-insert }
 zle -N self-insert-backslash
 
-project_pwd() {
-  # TODO figure out how to interpolate $HOME into regex expressio
-  # below rather than conditional, etc. Didn't work out-of-the-box
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    HOMEDIR=Users
-  else
-    HOMEDIR=home
-  fi
-  echo $PWD | sed -e "s/\/$HOMEDIR\/$USER/~/" -e "s/~\/projects\/\([^\/]*\)\/current/\\1/" -e "s/~\/Sites\/\([^\/]*\)\/current/http:\/\/\\1/"
-}
-
 tmux_name_window_after_directory() {
   tmux rename-window -t${TMUX_PANE} `basename $PWD`
 }

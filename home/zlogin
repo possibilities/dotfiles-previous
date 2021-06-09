@@ -1,2 +1,5 @@
 # For WSL
 export DISPLAY=127.0.0.1:0.0
+
+# pip uses this when you install with --use
+export PATH=$HOME/.local/bin:$PATH

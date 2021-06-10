@@ -79,11 +79,9 @@ sudo apt-get install --yes \
   libgbm-dev \
   wget
 
-if [ -v "$ZSH_NAME" ]; then
-  chsh -s $(which zsh)
-else
-  echo " - zsh already installed"
-fi
+mkdir -p ${HOME}/.vim/backups
+
+chsh -s $(which zsh)
 
 if ! [ -x "$(command -v lab)" ]; then
   curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh | sudo bash
@@ -173,7 +171,6 @@ then
   echo " - power level 10k already installed"
 else
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
-  echo 'source ~/.powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 fi
 
 if [ -f "${HOME}/.vim/autoload/plug.vim" ]

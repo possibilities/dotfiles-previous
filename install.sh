@@ -149,23 +149,6 @@ done
 echo " - deal with vim plugins"
 #./install-vim-plugins.sh || true
 
-echo " - installing apps globally from npm"
-if ! [ -x "$(command -v sloc)" ]; then
-  yarn global add sloc
-else
-  echo " - sloc already installed"
-fi
-if ! [ -x "$(command -v nodemon)" ]; then
-  yarn global add nodemon
-else
-  echo " - nodemon already installed"
-fi
-if ! [ -x "$(command -v sloc)" ]; then
-  yarn global add serve
-else
-  echo " - serve already installed"
-fi
-
 if [ -d "${HOME}/.powerlevel10k" ]
 then
   echo " - power level 10k already installed"

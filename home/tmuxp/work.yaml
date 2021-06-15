@@ -32,7 +32,7 @@ windows:
   layout: main-vertical
   start_directory: ~/code
   panes:
-    - shell_command: watch -n 10 dash.sh
+    - shell_command: watch -n 10 ./dash.sh
       focus: true
 - window_name: mrs
   layout: main-vertical
@@ -59,36 +59,36 @@ windows:
 #   panes:
 #     - shell_command: vim queries.mysql
 #       focus: true
-# - window_name: dotfiles
-#   layout: main-vertical
-#   start_directory: ~/code/dotfiles
-#   panes:
-#     - shell_command: vim
-#       focus: true
+- window_name: dotfiles
+  layout: main-vertical
+  start_directory: ~/code/dotfiles
+  panes:
+    - shell_command: vim
+      focus: true
 # - window_name: qac
 #   layout: main-vertical
 #   start_directory: ~/code/quote-app-common
 #   panes:
 #     - shell_command: vim
 #       focus: true
-# - window_name: events-ui
-#   layout: main-vertical
-#   start_directory: ~/code/events-ui
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - eval $(env.sh) yarn dev --port 4444
-#     - yarn lint:watch
-# - window_name: events-api
-#   layout: main-vertical
-#   start_directory: ~/code/events-api
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - eval $(env.sh) yarn dev:api
-#     - eval $(env.sh) yarn dev:worker
-#     - yarn test:watch
-#     - yarn lint:watch
+- window_name: events-ui
+  layout: main-vertical
+  start_directory: ~/code/events-ui
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(./env.sh) yarn dev --port 4444
+    - yarn lint:watch
+- window_name: events-api
+  layout: main-vertical
+  start_directory: ~/code/events-api
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(./env.sh) yarn dev:api
+    - eval $(./env.sh) yarn dev:worker
+    - yarn test:watch
+    - yarn lint:watch
 # # - window_name: e2e-prev
 # #   layout: main-vertical
 # #   start_directory: ~/code/quote-app-e2e

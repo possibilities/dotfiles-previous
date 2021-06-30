@@ -168,7 +168,7 @@ let g:vim_markdown_folding_disabled=1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " linting
-let g:ale_fixers = {'javascript': ['prettier-standard'], 'typescript': ['prettier']}
+let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript': ['prettier']}
 let g:ale_linters = {'javascript': ['prettier-standard'], 'typescript': []}
 let g:ale_fix_on_save = 1
 let g:ale_list_window_size = 5

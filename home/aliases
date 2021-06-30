@@ -17,6 +17,7 @@ alias tnd="tmux_name_window_after_directory"
 alias tn="tmux_name_window"
 alias gh="grep_history"
 alias gist="gist --open --private"
+alias praise="blame"
 
 # For windows/putty
 alias tmux="TERM=screen-256color-bce tmux"

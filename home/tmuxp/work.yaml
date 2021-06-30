@@ -32,13 +32,13 @@ windows:
   layout: main-vertical
   start_directory: ~/code
   panes:
-    - shell_command: watch -n 10 ./dash.sh
+    - shell_command: watch -n 20 ./dash.sh
       focus: true
 - window_name: mrs
   layout: main-vertical
   start_directory: ~/code
   panes:
-    - shell_command: watch -n 10 vm show-merge-requests --repo quote-app-ui --namespace vermontmutual
+    - shell_command: watch -n 45 vm show-merge-requests --repo quote-app-ui --namespace vermontmutual
       focus: true
 # - window_name: debug
 #   layout: main-vertical

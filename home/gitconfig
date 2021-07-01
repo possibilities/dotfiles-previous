@@ -15,6 +15,7 @@
     df = diff
     dfc = diff --cached
     co = checkout
+    praise = blame
     pl = log --pretty=oneline
     pls = log --pretty=oneline -5
     plm = log --pretty=oneline -10

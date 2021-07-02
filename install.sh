@@ -21,7 +21,6 @@ sudo apt-get install --yes \
   xclip \
   whois \
   uuid \
-  vim-gtk \
   git-secret \
   python3 \
   awscli \
@@ -29,9 +28,14 @@ sudo apt-get install --yes \
   gnupg2 \
   pass
 
-  # TODO re-add in some way, doesn't work on ubuntu vm
-  # hub \
+# TODO install hub in some way, doesn't work on ubuntu vm
 
+# install neovim from ppa
+sudo add-apt-repository ppa:neovim-ppa/unstable --yes
+sudo apt-get update
+sudo apt-get install neovim --yes
+
+# install git from ppa
 sudo add-apt-repository ppa:git-core/ppa --yes
 sudo apt update
 sudo apt install git --yes
@@ -147,7 +151,6 @@ do
 done
 
 echo " - deal with vim plugins"
-#./install-vim-plugins.sh || true
 
 if [ -d "${HOME}/.powerlevel10k" ]
 then
@@ -162,6 +165,8 @@ then
 else
   curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
+
+vim +'PlugInstall --sync' +qa
 
 echo
 echo ALL DONE, COMPLETE, OK, NICE, WORD, HAVE FUN SUCKA

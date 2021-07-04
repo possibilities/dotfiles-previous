@@ -142,13 +142,6 @@ echo " - linking binaries into \$HOME/local/bin"
 
 mkdir -p $HOME/local/bin
 
-for file in bin/*
-do
-  file_name=`basename $file`
-  echo "   * link $file to \$HOME/local/bin/$file_name"
-  rm -rf $HOME/local/bin/$file_name
-  ln -sf $PWD/$file $HOME/local/bin/$file_name
-done
 
 echo " - deal with vim plugins"
 

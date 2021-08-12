@@ -8,11 +8,9 @@ windows:
     - shell_command: vim
       focus: true
     - shell_command: yarn dev
-      shell_command_before: nvm use 12
     - shell_command: yarn types:watch
-      shell_command_before: nvm use 12
     - shell_command: yarn lint:watch
-      shell_command_before: nvm use 12
+
 - window_name: notes
   layout: main-vertical
   start_directory: ~/code/notes
@@ -59,40 +57,40 @@ windows:
 #   panes:
 #     - shell_command: vim queries.mysql
 #       focus: true
-- window_name: dotfiles
-  layout: main-vertical
-  start_directory: ~/code/dotfiles
-  panes:
-    - shell_command: vim
-      focus: true
+# - window_name: dotfiles
+#   layout: main-vertical
+#   start_directory: ~/code/dotfiles
+#   panes:
+#     - shell_command: vim
+#       focus: true
 # - window_name: qac
 #   layout: main-vertical
 #   start_directory: ~/code/quote-app-common
 #   panes:
 #     - shell_command: vim
 #       focus: true
-- window_name: events-ui
-  layout: main-vertical
-  start_directory: ~/code/events-ui
-  panes:
-    - shell_command: vim
-      focus: true
-    - eval $(./env.sh) yarn dev --port 4444
-    - yarn lint:watch
-- window_name: events-api
-  layout: main-vertical
-  start_directory: ~/code/events-api
-  panes:
-    - shell_command: vim
-      focus: true
-    - eval $(./env.sh) yarn dev:api
-    - eval $(./env.sh) yarn dev:worker
-    - yarn test:watch
-    - yarn lint:watch
-# # - window_name: e2e-prev
-# #   layout: main-vertical
-# #   start_directory: ~/code/quote-app-e2e
-# #   panes:
-# #     - shell_command: vim
-# #       focus: true
-# #     - yarn test
+# - window_name: events-ui
+#   layout: main-vertical
+#   start_directory: ~/code/events-ui
+#   panes:
+#     - shell_command: vim
+#       focus: true
+#     - eval $(./env.sh) yarn dev --port 4444
+#     - yarn lint:watch
+# - window_name: events-api
+#   layout: main-vertical
+#   start_directory: ~/code/events-api
+#   panes:
+#     - shell_command: vim
+#       focus: true
+#     - eval $(./env.sh) yarn dev:api
+#     - eval $(./env.sh) yarn dev:worker
+#     - yarn test:watch
+#     - yarn lint:watch
+# - window_name: e2e-prev
+#   layout: main-vertical
+#   start_directory: ~/code/quote-app-e2e
+#   panes:
+#     - shell_command: vim
+#       focus: true
+#     - yarn test

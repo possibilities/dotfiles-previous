@@ -26,7 +26,22 @@ sudo apt-get install --yes \
   awscli \
   python3-pip \
   gnupg2 \
-  pass
+  pass \
+  terminator \
+  gnome-tweaks \
+  x11-utils \
+  gnome-shell-extension-autohidetopbar \
+  gnome-shell-extension-pixelsaver \
+  gnome-shell-extension-unite-shell
+
+# OBS and dependencies
+apt-get install --yes \
+  ffmpeg \
+  v4l2loopback-dkms \
+
+sudo add-apt-repository ppa:obsproject/obs-studio --yes
+sudo apt update
+sudo apt install obs-studio --yes
 
 # TODO install hub in some way, doesn't work on ubuntu vm
 
@@ -163,3 +178,4 @@ vim +'PlugInstall --sync' +qa
 
 echo
 echo ALL DONE, COMPLETE, OK, NICE, WORD, HAVE FUN SUCKA
+echo INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell

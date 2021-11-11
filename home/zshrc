@@ -10,12 +10,6 @@ if [ -e "$HOME/.aliases" ]; then
   source "$HOME/.aliases"
 fi
 
-# mostly an WSL measure because the environment gets restarted often
-# leaving behind a bunch of files locked by vim
-if ls "/tmp/*.*.swp" 1> /dev/null 2>&1; then
-    rm /tmp/*.*.swp
-fi
-
 # ignore duplicate history entries
 setopt histignoredups
 

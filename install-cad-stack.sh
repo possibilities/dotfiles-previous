@@ -2,15 +2,21 @@
 
 set -e
 
-if [ -d "${HOME}/miniconda3" ] 
+MINICONDA_SCRIPT_NAME="Miniconda3-latest-Linux-x86_64.sh"
+
+if [ -d "${HOME}/miniconda3" ]
 then
   echo " - miniconda already installed"
 else
-  rm Miniconda3-py38_4.10.3-Linux-x86_64.sh
-  wget https://repo.anaconda.com/miniconda/Miniconda3-py38_4.10.3-Linux-x86_64.sh
+  rm -rf ${MINICONDA_SCRIPT_NAME}
+  wget "https://repo.anaconda.com/miniconda/${MINICONDA_SCRIPT_NAME}"
 
-  bash Miniconda3-py38_4.10.3-Linux-x86_64.sh -b
+  bash ${MINICONDA_SCRIPT_NAME} -b
 
-  rm Miniconda3-py38_4.10.3-Linux-x86_64.sh
+  rm ${MINICONDA_SCRIPT_NAME}
 fi
 
+conda install -c cadquery -c conda-forge cadquery=master --yes
+conda install -c cadquery -c conda-forge cq-editor=master --yes
+
+pip3 install black

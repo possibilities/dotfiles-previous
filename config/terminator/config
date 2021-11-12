@@ -1,4 +1,5 @@
 [global_config]
+  window_state = fullscreen
 [keybindings]
   go_up = None
   go_down = None

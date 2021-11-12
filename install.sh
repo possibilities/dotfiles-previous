@@ -8,7 +8,6 @@ shopt -s dotglob
 sudo apt-get update
 sudo apt-get install --yes \
   unzip \
-  git \
   jq \
   tree \
   watch \
@@ -19,9 +18,9 @@ sudo apt-get install --yes \
   zsh \
   uuid \
   xclip \
+  xsel \
   whois \
   uuid \
-  git-secret \
   python3 \
   awscli \
   python3-pip \
@@ -31,6 +30,24 @@ sudo apt-get install --yes \
   gnome-tweaks \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extension-autohidetopbar
+
+echo ${SHELL}
+if [[ -v UPGRADE ]] || [ ${SHELL} == "/bin/bash" ]; then
+  echo "setting zsh shell to default, enter password"
+  chsh -s $(which zsh)
+else
+  echo " - zsh shell already default"
+fi
+
+if [[ -v UPGRADE ]] || ! [ -f "${HOME}/.has_install_git_from_ppa" ]; then
+  echo " - installing git from ppa"
+  sudo add-apt-repository ppa:git-core/ppa --yes
+  sudo apt update
+  sudo apt install git --yes
+  touch "${HOME}/.has_install_git_from_ppa"
+else
+  echo " - git already installed"
+fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v polybar)" ]; then
   echo " - installing polybar from source"
@@ -80,23 +97,7 @@ else
   echo " - polybar already installed"
 fi
 
-if [[ -v UPGRADE ]] || [ ${SHELL} == "/usr/bin/bash" ]; then
-  echo "setting zsh shell to default, enter password"
-  chsh -s $(which zsh)
-else
-  echo " - zsh shell already default"
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v git)" ]; then
-  echo " - installing git from ppa"
-  sudo add-apt-repository ppa:git-core/ppa --yes
-  sudo apt update
-  sudo apt install git --yes
-else
-  echo " - git already installed"
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v obs)" ]; then
+if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/obs" ]; then
   echo " - installing obs from ppa"
   sudo apt-get install --yes \
     ffmpeg \
@@ -134,15 +135,8 @@ else
   echo " - installing nvm"
   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
   source ~/.nvm/nvm.sh
-  nvm install 12 --lts
   nvm install 14 --lts
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v tmuxp)" ]; then
-  echo " - installing tmuxp"
-  pip3 install --quiet --user tmuxp
-else
-  echo " - tmuxp already installed"
+  nvm install 12 --lts
 fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v yarn)" ]; then
@@ -168,20 +162,18 @@ mkdir -p ${HOME}/.vim/backups
 if [[ -v UPGRADE ]] || [ -f "${HOME}/.vim/autoload/plug.vim" ]
 then
   echo " - vim plug already installed"
-  vim +'PlugInstall --sync' +qa
+  nvim +'PlugInstall --sync' +qa
 else
   curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 
-# Python
-
-MINICONDA_SCRIPT_NAME="Miniconda3-latest-Linux-x86_64.sh"
-
 if [[ -v UPGRADE ]] || [ -d "${HOME}/miniconda3" ]
 then
   echo " - miniconda already installed"
 else
+  MINICONDA_SCRIPT_NAME="Miniconda3-latest-Linux-x86_64.sh"
+
   rm -rf ${MINICONDA_SCRIPT_NAME}
   wget "https://repo.anaconda.com/miniconda/${MINICONDA_SCRIPT_NAME}"
 
@@ -190,17 +182,22 @@ else
   rm ${MINICONDA_SCRIPT_NAME}
 fi
 
-# Cad stack
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v kicad-nightly)" ]; then
   echo " - installing kicad-nightly from ppa"
-  sudo add-apt-repository --yes ppa:kicad/kicad-5.1-releases
+  sudo add-apt-repository --yes ppa:kicad/kicad-dev-nightly
   sudo apt update
-  sudo apt install --yes --install-recommends kicad
+  sudo apt install --yes \
+    kicad-nightly \
+    kicad-nightly-footprints \
+    kicad-nightly-libraries \
+    kicad-nightly-packages3d \
+    kicad-nightly-symbols \
+    kicad-nightly-templates
 else
   echo " - kicad-nightly already installed"
 fi
 
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v obs)" ]; then
+if [[ -v UPGRADE ]] || ! [ -x "$(command -v cq-editor)" ]; then
   echo " - install cadquery and cadquery editor"
   conda install -c cadquery -c conda-forge cadquery=master --yes
   conda install -c cadquery -c conda-forge cq-editor=master --yes
@@ -208,6 +205,13 @@ else
   echo " - cadquery and cadquery editor already installed"
 fi
 
+
+if [[ -v UPGRADE ]] || ! [ -x "$(command -v tmuxp)" ]; then
+  echo " - installing tmuxp"
+  pip3 install tmuxp
+else
+  echo " - tmuxp already installed"
+fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v black)" ]; then
   echo " - installing black"
@@ -222,8 +226,7 @@ for file in home/*
 do
   file_name=`basename $file`
   echo "   * link $file to \$HOME/.$file_name"
-  rm -rf $HOME/.$file_name
-  ln -sf $PWD/$file $HOME/.$file_name
+  ln -sfT $PWD/$file $HOME/.$file_name
 done
 
 echo " - linking config files into \$HOME\config"
@@ -234,8 +237,7 @@ for file in config/*
 do
   file_name=`basename $file`
   echo "   * link $file to \$HOME/.config/$file_name"
-  rm -rf $HOME/.config/$file_name
-  ln -sf $PWD/$file $HOME/.config/$file_name
+  ln -sfT $PWD/$file $HOME/.config/$file_name
 done
 
 echo " - linking ssh files into \$HOME/.ssh"
@@ -247,8 +249,7 @@ for file in ssh/*
 do
   file_name=`basename $file`
   echo "   * link $file to \$HOME/.ssh/$file_name"
-  rm -rf $HOME/.ssh/$file_name
-  ln -sf $PWD/$file $HOME/.ssh/$file_name
+  ln -sfT $PWD/$file $HOME/.ssh/$file_name
 done
 
 echo " - linking binaries into \$HOME/local/bin"
@@ -257,5 +258,8 @@ mkdir -p $HOME/local/bin
 
 
 echo
-echo ALL DONE, COMPLETE, OK, NICE, WORD, HAVE FUN SUCKA
-echo INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell
+echo "NOTES:"
+echo "INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell"
+echo "INSTALL FONT: https://github.com/romkatv/powerlevel10k#manual-font-installation"
+echo "SIGN OUT AND BACK IN AGAIN TO UPDATE SHELL (FIRST TIME ONLY)"
+echo "RUN WITH UPGRADE=1 TO UPGRADE EVERYTHING"

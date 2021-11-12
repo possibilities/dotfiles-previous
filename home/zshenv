@@ -34,3 +34,6 @@ tmux_name_window() {
 grep_history() {
   cat ~/.zsh_history | grep $1
 }
+
+# pip uses this when you install with --use
+export PATH=$HOME/.local/bin:$PATH

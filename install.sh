@@ -32,6 +32,54 @@ sudo apt-get install --yes \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extension-autohidetopbar
 
+if [[ -v UPGRADE ]] || ! [ -x "$(command -v polybar)" ]; then
+  echo " - installing polybar from source"
+  # polybar
+  sudo apt-get install --yes \
+    cmake \
+    cmake-data \
+    libcairo2-dev \
+    libxcb1-dev \
+    libxcb-ewmh-dev \
+    libxcb-icccm4-dev \
+    libxcb-image0-dev \
+    libxcb-randr0-dev \
+    libxcb-util0-dev \
+    libxcb-xkb-dev \
+    pkg-config \
+    i3-wm \
+    python3-xcbgen \
+    xcb-proto \
+    libxcb-xrm-dev \
+    libasound2-dev \
+    libmpdclient-dev \
+    libiw-dev \
+    libcurl4-openssl-dev \
+    libpulse-dev \
+    libxcb-composite0-dev \
+    libjsoncpp-dev \
+    libuv1-dev \
+    python3-xcbgen \
+    python3-sphinx
+
+  sudo ln -sf /usr/include/jsoncpp/json/ /usr/include/json
+
+  sudo rm -rf /tmp/polybar
+  git clone https://github.com/jaagr/polybar.git /tmp/polybar
+  cd /tmp/polybar
+
+  # Conda interferes with this build so we move it out of the way and back
+  if [ -d "${HOME}/miniconda3" ]; then
+      mv ${HOME}/miniconda3 ${HOME}/miniconda3.bak
+  fi
+  AUTO=ON ./build.sh || true
+  if [ -d "${HOME}/miniconda3.bak" ]; then
+      mv ${HOME}/miniconda3.bak ${HOME}/miniconda3
+  fi
+else
+  echo " - polybar already installed"
+fi
+
 if [[ -v UPGRADE ]] || [ ${SHELL} == "/usr/bin/bash" ]; then
   echo "setting zsh shell to default, enter password"
   chsh -s $(which zsh)
@@ -50,7 +98,6 @@ fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v obs)" ]; then
   echo " - installing obs from ppa"
-  # OBS and dependencies
   sudo apt-get install --yes \
     ffmpeg \
     v4l2loopback-dkms \
@@ -66,7 +113,6 @@ fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v nvim)" ]; then
   echo " - installing neovim from ppa"
-  # install neovim from ppa
   sudo add-apt-repository ppa:neovim-ppa/unstable --yes
   sudo apt-get update
   sudo apt-get install neovim --yes

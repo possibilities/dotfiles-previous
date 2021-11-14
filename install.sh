@@ -222,10 +222,19 @@ fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v autokey-gtk)" ]; then
   echo " - installing autokey"
-  pip3 install autokey
-  sudo apt install python3-dbus python3-xlib python3-pyinotify wmctrl
-  sudo apt install python3-gi gir1.2-gtk-3.0 gir1.2-gtksource-3.0 gir1.2-appindicator3-0.1 gir1.2-glib-2.0 gir1.2-notify-0.7 zenity
-  sudo apt install pyqt5-dev-tools
+  sudo apt install --yes \
+    python3-dbus \
+    python3-xlib \
+    python3-pyinotify \
+    wmctrl \
+    python3-gi \
+    gir1.2-gtk-3.0 \
+    gir1.2-gtksource-3.0 \
+    gir1.2-appindicator3-0.1 \
+    gir1.2-glib-2.0 \
+    gir1.2-notify-0.7 \
+    zenity \
+    pyqt5-dev-tools
   pip3 install --user git+https://github.com/autokey/autokey
 else
   echo " - autokey already installed"

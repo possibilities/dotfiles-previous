@@ -234,7 +234,11 @@ if [[ -v UPGRADE ]] || ! [ -x "$(command -v autokey-gtk)" ]; then
     gir1.2-glib-2.0 \
     gir1.2-notify-0.7 \
     zenity \
-    pyqt5-dev-tools
+    pyqt5-dev-tools \
+    libdbus-glib-1-dev \
+    libgirepository1.0-dev
+  pip3 install dbus-python
+  pip3 install PyGObject
   pip3 install --user git+https://github.com/autokey/autokey
 else
   echo " - autokey already installed"
@@ -277,9 +281,12 @@ echo " - linking binaries into \$HOME/local/bin"
 mkdir -p $HOME/local/bin
 
 
+sudo apt autoremove --yes
+
 echo
 echo "NOTES:"
 echo "INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell"
 echo "INSTALL FONT: https://github.com/romkatv/powerlevel10k#manual-font-installation"
 echo "SIGN OUT AND BACK IN AGAIN TO UPDATE SHELL (FIRST TIME ONLY)"
 echo "RUN WITH UPGRADE=1 TO UPGRADE EVERYTHING"
+echo "AUTOKEY NEEDS TO BE RUN WITH CONFIG FLAG THE FIRST TIME: autokey-gtk --config"

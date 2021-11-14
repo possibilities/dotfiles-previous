@@ -32,7 +32,7 @@ sudo apt-get install --yes \
   gnome-shell-extension-autohidetopbar
 
 echo ${SHELL}
-if [[ -v UPGRADE ]] || [ ${SHELL} == "/bin/bash" ]; then
+if [ ${SHELL} == "/bin/bash" ]; then
   echo "setting zsh shell to default, enter password"
   chsh -s $(which zsh)
 else

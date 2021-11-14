@@ -29,9 +29,9 @@ sudo apt-get install --yes \
   terminator \
   gnome-tweaks \
   gnome-shell-extension-pixelsaver \
-  gnome-shell-extension-autohidetopbar
+  gnome-shell-extension-autohidetopbar \
+  librecad
 
-echo ${SHELL}
 if [ ${SHELL} == "/bin/bash" ]; then
   echo "setting zsh shell to default, enter password"
   chsh -s $(which zsh)
@@ -108,6 +108,15 @@ if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/obs" ]; then
   sudo apt install obs-studio --yes
 else
   echo " - obs already installed"
+fi
+
+if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/inkscape" ]; then
+  echo " - installing inkscape from ppa"
+  sudo add-apt-repository ppa:inkscape.dev/stable --yes
+  sudo apt-get update
+  sudo apt install inkscape --yes
+else
+  echo " - inkscape already installed"
 fi
 
 # TODO install hub in some way, doesn't work on ubuntu vm

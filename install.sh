@@ -2,6 +2,8 @@
 
 set -e
 
+export DOTFILE_PATH=${PWD}
+
 # include hidden files when globbing
 shopt -s dotglob
 
@@ -30,7 +32,8 @@ sudo apt-get install --yes \
   gnome-tweaks \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extension-autohidetopbar \
-  librecad
+  librecad \
+  flatpak
 
 if [ ${SHELL} == "/bin/bash" ]; then
   echo "setting zsh shell to default, enter password"
@@ -38,6 +41,14 @@ if [ ${SHELL} == "/bin/bash" ]; then
 else
   echo " - zsh shell already default"
 fi
+
+# if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/gimp" ]; then
+#   echo " - installing gimp"
+#   sudo flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref --assumeyes
+# else
+#   echo " - gimp already installed"
+# fi
+
 
 if [[ -v UPGRADE ]] || ! [ -f "${HOME}/.has_install_git_from_ppa" ]; then
   echo " - installing git from ppa"
@@ -254,6 +265,8 @@ else
 fi
 
 echo " - linking dot files into \$HOME"
+
+cd ${DOTFILE_PATH}
 
 for file in home/*
 do

@@ -163,7 +163,7 @@ if [[ -v UPGRADE ]] || ! [ -x "$(command -v yarn)" ]; then
   echo " - installing yarn"
   curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-  sudo apt update && sudo apt install --no-install-recommends yarn
+  sudo apt update && sudo apt install --yes --no-install-recommends yarn
 else
   echo " - yarn already installed"
 fi
@@ -297,6 +297,12 @@ do
   echo "   * link $file to \$HOME/.ssh/$file_name"
   ln -sfT $PWD/$file $HOME/.ssh/$file_name
 done
+
+echo " - installing MS fonts so the browser looks non-terrible"
+
+sudo add-apt-repository multiverse --yes
+sudo apt update
+sudo apt install ttf-mscorefonts-installer --yes
 
 echo " - linking binaries into \$HOME/local/bin"
 

@@ -51,7 +51,7 @@ call plug#end()
 set nocompatible
 
 " leader
-let mapleader=','
+let mapleader="\<Space>"
 
 filetype plugin on
 
@@ -154,7 +154,7 @@ let NERDTreeChDirMode=2
 let NERDTreeWinSize=35
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-nmap <silent> <Space> :NERDTreeToggle<CR>
+noremap <Leader><Space> :NERDTreeToggle<CR>
 
 " setup gist
 let g:gist_show_privates = 1

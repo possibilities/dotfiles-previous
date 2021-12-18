@@ -131,9 +131,9 @@ nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <silent> <Tab> :bn<CR>
 
 " quick save
-noremap <Leader>k :update<CR>
+noremap <Leader>j :update<CR>
 " quick save + quit
-noremap <Leader>j :update<CR>:quit<CR>
+noremap <Leader>a :update<CR>:quit<CR>
 
 " a binding for closing things, closes:
 " * the current buffer :bd
@@ -167,6 +167,8 @@ let g:gist_get_multiplefile = 1
 let g:vim_markdown_folding_disabled=1
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_map = '<Leader>l'
+let g:ctrlp_cmd = 'CtrlP'
 
 " linting
 let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript': ['prettier'], 'python': ['black']}

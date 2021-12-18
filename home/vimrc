@@ -52,6 +52,7 @@ set nocompatible
 
 " leader
 let mapleader="\<Space>"
+:noremap , <Esc>:echoerr 'NEW LEADER KEY IS SPACEBAR!!'<CR>
 
 filetype plugin on
 
@@ -130,9 +131,9 @@ nnoremap <silent> <S-Tab> :bp<CR>
 nnoremap <silent> <Tab> :bn<CR>
 
 " quick save
-noremap <Leader>m :update<CR>
+noremap <Leader>k :update<CR>
 " quick save + quit
-noremap <Leader>n :update<CR>:quit<CR>
+noremap <Leader>j :update<CR>:quit<CR>
 
 " a binding for closing things, closes:
 " * the current buffer :bd
@@ -154,7 +155,7 @@ let NERDTreeChDirMode=2
 let NERDTreeWinSize=35
 let NERDTreeQuitOnOpen=1
 let NERDTreeShowHidden=1
-noremap <Leader><Space> :NERDTreeToggle<CR>
+noremap <Leader>; :NERDTreeToggle<CR>
 
 " setup gist
 let g:gist_show_privates = 1

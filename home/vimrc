@@ -168,9 +168,10 @@ let g:gist_get_multiplefile = 1
 " setup vim markdown
 let g:vim_markdown_folding_disabled=1
 
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-let g:ctrlp_map = '<Leader>l'
-let g:ctrlp_cmd = 'CtrlP'
+" fuzzy find file in project
+nnoremap <leader>l <cmd>Telescope git_files<cr>
+nnoremap <leader>k <cmd>Telescope live_grep<cr>
+map <leader>f :Ggrep --untracked <cword><CR><CR>
 
 " linting
 let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript': ['prettier'], 'python': ['black']}

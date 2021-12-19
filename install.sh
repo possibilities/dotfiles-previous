@@ -141,6 +141,18 @@ else
   echo " - neovim already installed"
 fi
 
+
+# For telescope
+if [[ -v UPGRADE ]] || [ -d "/usr/share/doc/ripgrep" ]
+  echo " - installing ripgrep"
+  sudo apt-get install ripgrep --yes
+else
+  echo " - ripgrep already installed"
+fi
+
+# For neovim < - > js integration
+yarn global add neovim
+
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v lab)" ]; then
   echo " - installing lab"
   curl -s https://raw.githubusercontent.com/zaquestion/lab/master/install.sh | sudo bash

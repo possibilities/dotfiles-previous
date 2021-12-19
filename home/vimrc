@@ -34,9 +34,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'mattn/gist-vim'
 " vim interface to web api, gist-vim depends on it
 Plug 'mattn/webapi-vim'
-" fuzzy file searching
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tpope/vim-classpath'
 " show vim status in gutter
 Plug 'airblade/vim-gitgutter'
 " navigate tmux and vim splits seamlessly
@@ -45,6 +42,11 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'kana/vim-textobj-user'
 " ae/ie for the entire region of the current buffer
 Plug 'kana/vim-textobj-entire'
+
+" telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 call plug#end()
 

@@ -42,14 +42,6 @@ else
   echo " - zsh shell already default"
 fi
 
-# if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/gimp" ]; then
-#   echo " - installing gimp"
-#   sudo flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref --assumeyes
-# else
-#   echo " - gimp already installed"
-# fi
-
-
 if [[ -v UPGRADE ]] || ! [ -f "${HOME}/.has_install_git_from_ppa" ]; then
   echo " - installing git from ppa"
   sudo add-apt-repository ppa:git-core/ppa --yes
@@ -58,54 +50,6 @@ if [[ -v UPGRADE ]] || ! [ -f "${HOME}/.has_install_git_from_ppa" ]; then
   touch "${HOME}/.has_install_git_from_ppa"
 else
   echo " - git already installed"
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v polybar)" ]; then
-  echo " - installing polybar from source"
-  # polybar
-  sudo apt-get install --yes \
-    cmake \
-    cmake-data \
-    libcairo2-dev \
-    libxcb1-dev \
-    libxcb-ewmh-dev \
-    libxcb-icccm4-dev \
-    libxcb-image0-dev \
-    libxcb-randr0-dev \
-    libxcb-util0-dev \
-    libxcb-xkb-dev \
-    pkg-config \
-    i3-wm \
-    python3-xcbgen \
-    xcb-proto \
-    libxcb-xrm-dev \
-    libasound2-dev \
-    libmpdclient-dev \
-    libiw-dev \
-    libcurl4-openssl-dev \
-    libpulse-dev \
-    libxcb-composite0-dev \
-    libjsoncpp-dev \
-    libuv1-dev \
-    python3-xcbgen \
-    python3-sphinx
-
-  sudo ln -sf /usr/include/jsoncpp/json/ /usr/include/json
-
-  sudo rm -rf /tmp/polybar
-  git clone https://github.com/jaagr/polybar.git /tmp/polybar
-  cd /tmp/polybar
-
-  # Conda interferes with this build so we move it out of the way and back
-  if [ -d "${HOME}/miniconda3" ]; then
-      mv ${HOME}/miniconda3 ${HOME}/miniconda3.bak
-  fi
-  AUTO=ON ./build.sh || true
-  if [ -d "${HOME}/miniconda3.bak" ]; then
-      mv ${HOME}/miniconda3.bak ${HOME}/miniconda3
-  fi
-else
-  echo " - polybar already installed"
 fi
 
 if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/obs" ]; then
@@ -143,7 +87,7 @@ fi
 
 
 # For telescope
-if [[ -v UPGRADE ]] || [ -d "/usr/share/doc/ripgrep" ]
+if [[ -v UPGRADE ]] || [ -d "/usr/share/doc/ripgrep" ]; then
   echo " - installing ripgrep"
   sudo apt-get install ripgrep --yes
 else
@@ -252,30 +196,6 @@ else
   echo " - black already installed"
 fi
 
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v autokey-gtk)" ]; then
-  echo " - installing autokey"
-  sudo apt install --yes \
-    python3-dbus \
-    python3-xlib \
-    python3-pyinotify \
-    wmctrl \
-    python3-gi \
-    gir1.2-gtk-3.0 \
-    gir1.2-gtksource-3.0 \
-    gir1.2-appindicator3-0.1 \
-    gir1.2-glib-2.0 \
-    gir1.2-notify-0.7 \
-    zenity \
-    pyqt5-dev-tools \
-    libdbus-glib-1-dev \
-    libgirepository1.0-dev
-  pip3 install dbus-python
-  pip3 install PyGObject
-  pip3 install --user git+https://github.com/autokey/autokey
-else
-  echo " - autokey already installed"
-fi
-
 echo " - linking dot files into \$HOME"
 
 cd ${DOTFILE_PATH}
@@ -318,8 +238,8 @@ sudo apt install ttf-mscorefonts-installer --yes
 
 echo " - linking binaries into \$HOME/local/bin"
 
-mkdir -p $HOME/local/bin
-
+mkdir -p $HOME/local
+ln -sf $PWD/local-bin $HOME/local/bin
 
 sudo apt autoremove --yes
 
@@ -329,4 +249,3 @@ echo "INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell"
 echo "INSTALL FONT: https://github.com/romkatv/powerlevel10k#manual-font-installation"
 echo "SIGN OUT AND BACK IN AGAIN TO UPDATE SHELL (FIRST TIME ONLY)"
 echo "RUN WITH UPGRADE=1 TO UPGRADE EVERYTHING"
-echo "AUTOKEY NEEDS TO BE RUN WITH CONFIG FLAG THE FIRST TIME: autokey-gtk --config"

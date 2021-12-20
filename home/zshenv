@@ -37,3 +37,5 @@ grep_history() {
 
 # pip uses this when you install with --use
 export PATH=$HOME/.local/bin:$PATH
+# for personal scripts
+export PATH=$HOME/local/bin:$PATH

@@ -1,12 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-" nerd tree file explorer
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" mysql
 Plug 'NLKNguyen/pipe.vim'
 Plug 'NLKNguyen/pipe-mysql.vim'
-Plug 'blueyed/vim-qf_resize'
-Plug 'tommcdo/vim-exchange'
-Plug 'tommcdo/vim-fugitive-blame-ext'
 " linting
 Plug 'dense-analysis/ale'
 " theme
@@ -16,6 +12,7 @@ Plug 'tpope/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 " comment toggling
 Plug 'tpope/vim-commentary'
 " surround things with things
@@ -26,6 +23,7 @@ Plug 'tpope/vim-flagship'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'shumphrey/fugitive-gitlab.vim'
+Plug 'tommcdo/vim-fugitive-blame-ext'
 " enable repeating supported plugin maps with "."
 Plug 'tpope/vim-repeat'
 " pairs of handy bracket mappings
@@ -38,15 +36,18 @@ Plug 'mattn/webapi-vim'
 Plug 'airblade/vim-gitgutter'
 " navigate tmux and vim splits seamlessly
 Plug 'christoomey/vim-tmux-navigator'
+" exchange any two text values
+Plug 'tommcdo/vim-exchange'
 " enable text object user plugins
 Plug 'kana/vim-textobj-user'
 " ae/ie for the entire region of the current buffer
 Plug 'kana/vim-textobj-entire'
-
 " telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+" better quickfix lists
+Plug 'kevinhwang91/nvim-bqf'
 
 call plug#end()
 
@@ -102,16 +103,6 @@ set laststatus=2
 set showtabline=2
 set guioptions-=e
 
-" no arrow keys!
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-
 " more history
 set history=200
 
@@ -128,9 +119,10 @@ set backupdir=~/.vim/backups/
 " swap files
 set directory=./.vim/backups,/tmp
 
-" next buffer
-nnoremap <silent> <S-Tab> :bp<CR>
+" tab to next buffer
 nnoremap <silent> <Tab> :bn<CR>
+" shift tab to previous buffer
+nnoremap <silent> <S-Tab> :bp<CR>
 
 " quick save
 noremap <Leader>j :update<CR>
@@ -152,13 +144,6 @@ set t_Co=256
 set background=dark
 colorscheme PaperColor
 
-" NERDTree
-let NERDTreeChDirMode=2
-let NERDTreeWinSize=35
-let NERDTreeQuitOnOpen=1
-let NERDTreeShowHidden=1
-noremap <Leader>; :NERDTreeToggle<CR>
-
 " setup gist
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
@@ -167,11 +152,12 @@ let g:gist_get_multiplefile = 1
 
 " setup vim markdown
 let g:vim_markdown_folding_disabled=1
-
 " fuzzy find file in project
 nnoremap <leader>l <cmd>Telescope git_files<cr>
 nnoremap <leader>k <cmd>Telescope live_grep<cr>
-map <leader>f :Ggrep --untracked <cword><CR><CR>
+nnoremap <leader>f <cmd>Telescope grep_string<cr>
+nnoremap <leader>s <cmd>Telescope find_files<cr>
+nnoremap <leader>; <cmd>Telescope file_browser<cr>
 
 " linting
 let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript': ['prettier'], 'python': ['black']}

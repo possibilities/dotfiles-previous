@@ -158,19 +158,13 @@ else
   rm ${MINICONDA_SCRIPT_NAME}
 fi
 
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v kicad-nightly)" ]; then
-  echo " - installing kicad-nightly from ppa"
-  sudo add-apt-repository --yes ppa:kicad/kicad-dev-nightly
+if [[ -v UPGRADE ]] || ! [ -x "$(command -v kicad)" ]; then
+  echo " - installing kicad from ppa"
+  sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
   sudo apt update
-  sudo apt install --yes \
-    kicad-nightly \
-    kicad-nightly-footprints \
-    kicad-nightly-libraries \
-    kicad-nightly-packages3d \
-    kicad-nightly-symbols \
-    kicad-nightly-templates
+  sudo apt install --yes --install-recommends kicad
 else
-  echo " - kicad-nightly already installed"
+  echo " - kicad already installed"
 fi
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v cq-editor)" ]; then

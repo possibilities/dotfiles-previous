@@ -1,5 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
+" file explorer
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " mysql
 Plug 'NLKNguyen/pipe.vim'
 Plug 'NLKNguyen/pipe-mysql.vim'
@@ -157,7 +159,12 @@ nnoremap <leader>l <cmd>Telescope git_files<cr>
 nnoremap <leader>k <cmd>Telescope live_grep<cr>
 nnoremap <leader>f <cmd>Telescope grep_string<cr>
 nnoremap <leader>s <cmd>Telescope find_files<cr>
-nnoremap <leader>; <cmd>Telescope file_browser<cr>
+
+let NERDTreeChDirMode=2
+let NERDTreeWinSize=35
+let NERDTreeQuitOnOpen=1
+let NERDTreeShowHidden=1
+nnoremap <leader>; :NERDTreeToggle<CR>
 
 " linting
 let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript': ['prettier'], 'python': ['black']}

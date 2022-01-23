@@ -171,6 +171,8 @@ let g:ale_fixers = {'javascript': ['prettier-standard', 'prettier'], 'typescript
 let g:ale_linters = {'javascript': ['prettier-standard'], 'typescript': []}
 let g:ale_fix_on_save = 1
 let g:ale_list_window_size = 5
+let g:ale_python_flake8_options = '--builtins="show_object" --max-line-length=88 --extend-ignore=E203,E501'
+
 
 " Highlight tsx
 augroup SyntaxSettings

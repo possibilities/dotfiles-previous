@@ -69,24 +69,24 @@ windows:
 #   panes:
 #     - shell_command: vim
 #       focus: true
-# - window_name: events-ui
-#   layout: main-vertical
-#   start_directory: ~/code/events-ui
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - eval $(./env.sh) yarn dev --port 4444
-#     - yarn lint:watch
-# - window_name: events-api
-#   layout: main-vertical
-#   start_directory: ~/code/events-api
-#   panes:
-#     - shell_command: vim
-#       focus: true
-#     - eval $(./env.sh) yarn dev:api
-#     - eval $(./env.sh) yarn dev:worker
-#     - yarn test:watch
-#     - yarn lint:watch
+- window_name: events-ui
+  layout: main-vertical
+  start_directory: ~/code/events-ui
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(./env.sh) yarn dev --port 4444
+    - yarn lint:watch
+- window_name: events-api
+  layout: main-vertical
+  start_directory: ~/code/events-api
+  panes:
+    - shell_command: vim
+      focus: true
+    - eval $(./env.sh) yarn dev:api
+    - eval $(./env.sh) yarn dev:worker
+    - yarn test:watch
+    - yarn lint:watch
 # - window_name: e2e-prev
 #   layout: main-vertical
 #   start_directory: ~/code/quote-app-e2e

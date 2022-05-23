@@ -13,7 +13,6 @@ sudo apt-get install --yes \
   jq \
   tree \
   watch \
-  python \
   curl \
   wget \
   tmux \
@@ -22,24 +21,23 @@ sudo apt-get install --yes \
   xclip \
   xsel \
   whois \
-  uuid \
-  python3 \
-  awscli \
-  python3-pip \
-  gnupg2 \
-  pass \
-  terminator \
-  gnome-tweaks \
-  gnome-shell-extension-pixelsaver \
-  gnome-shell-extension-autohidetopbar \
-  librecad \
-  flatpak
+  awscli
 
 if [ ${SHELL} == "/bin/bash" ]; then
   echo "setting zsh shell to default, enter password"
   chsh -s $(which zsh)
 else
   echo " - zsh shell already default"
+fi
+
+if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/alacritty" ]; then
+  echo " - installing alacritty from ppa"
+  sudo add-apt-repository ppa:aslatter/ppa --yes
+  sudo apt update
+  sudo apt install alacritty --yes
+  touch "${HOME}/.has_install_alacritty"
+else
+  echo " - alacritty already installed"
 fi
 
 if [[ -v UPGRADE ]] || ! [ -f "${HOME}/.has_install_git_from_ppa" ]; then
@@ -52,27 +50,27 @@ else
   echo " - git already installed"
 fi
 
-if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/obs" ]; then
-  echo " - installing obs from ppa"
-  sudo apt-get install --yes \
-    ffmpeg \
-    v4l2loopback-dkms \
+#if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/obs" ]; then
+#  echo " - installing obs from ppa"
+#  sudo apt-get install --yes \
+#    ffmpeg \
+#    v4l2loopback-dkms \
+#
+#  sudo add-apt-repository ppa:obsproject/obs-studio --yes
+#  sudo apt update
+#  sudo apt install obs-studio --yes
+#else
+#  echo " - obs already installed"
+#fi
 
-  sudo add-apt-repository ppa:obsproject/obs-studio --yes
-  sudo apt update
-  sudo apt install obs-studio --yes
-else
-  echo " - obs already installed"
-fi
-
-if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/inkscape" ]; then
-  echo " - installing inkscape from ppa"
-  sudo add-apt-repository ppa:inkscape.dev/stable --yes
-  sudo apt-get update
-  sudo apt install inkscape --yes
-else
-  echo " - inkscape already installed"
-fi
+#if [[ -v UPGRADE ]] || ! [ -f "/usr/bin/inkscape" ]; then
+#  echo " - installing inkscape from ppa"
+#  sudo add-apt-repository ppa:inkscape.dev/stable --yes
+#  sudo apt-get update
+#  sudo apt install inkscape --yes
+#else
+#  echo " - inkscape already installed"
+#fi
 
 # TODO install hub in some way, doesn't work on ubuntu vm
 
@@ -87,15 +85,15 @@ fi
 
 
 # For telescope
-if [[ -v UPGRADE ]] || [ -d "/usr/share/doc/ripgrep" ]; then
-  echo " - installing ripgrep"
-  sudo apt-get install ripgrep --yes
-else
-  echo " - ripgrep already installed"
-fi
+#if [[ -v UPGRADE ]] || [ -d "/usr/share/doc/ripgrep" ]; then
+#  echo " - installing ripgrep"
+#  sudo apt-get install ripgrep --yes
+#else
+#  echo " - ripgrep already installed"
+#fi
 
 # For neovim < - > js integration
-yarn global add neovim
+#yarn global add neovim
 
 if [[ -v UPGRADE ]] || ! [ -x "$(command -v lab)" ]; then
   echo " - installing lab"
@@ -131,64 +129,52 @@ else
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.powerlevel10k
 fi
 
-echo " - deal with vim plugins"
 
-mkdir -p ${HOME}/.vim/backups
-
-if [[ -v UPGRADE ]] || [ -f "${HOME}/.vim/autoload/plug.vim" ]
-then
-  echo " - vim plug already installed"
-  nvim +'PlugInstall --sync' +qa
-else
-  curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-
-if [[ -v UPGRADE ]] || [ -d "${HOME}/miniconda3" ]
-then
-  echo " - miniconda already installed"
-else
-  MINICONDA_SCRIPT_NAME="Miniconda3-latest-Linux-x86_64.sh"
-
-  rm -rf ${MINICONDA_SCRIPT_NAME}
-  wget "https://repo.anaconda.com/miniconda/${MINICONDA_SCRIPT_NAME}"
-
-  bash ${MINICONDA_SCRIPT_NAME} -b
-
-  rm ${MINICONDA_SCRIPT_NAME}
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v kicad)" ]; then
-  echo " - installing kicad from ppa"
-  sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
-  sudo apt update
-  sudo apt install --yes --install-recommends kicad
-else
-  echo " - kicad already installed"
-fi
-
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v cq-editor)" ]; then
-  echo " - install cadquery and cadquery editor"
-  conda install -c cadquery -c conda-forge cadquery=master --yes
-  conda install -c cadquery -c conda-forge cq-editor=master --yes
-else
-  echo " - cadquery and cadquery editor already installed"
-fi
+#if [[ -v UPGRADE ]] || [ -d "${HOME}/miniconda3" ]
+#then
+#  echo " - miniconda already installed"
+#else
+#  MINICONDA_SCRIPT_NAME="Miniconda3-latest-Linux-x86_64.sh"
+#
+#  rm -rf ${MINICONDA_SCRIPT_NAME}
+#  wget "https://repo.anaconda.com/miniconda/${MINICONDA_SCRIPT_NAME}"
+#
+#  bash ${MINICONDA_SCRIPT_NAME} -b
+#
+#  rm ${MINICONDA_SCRIPT_NAME}
+#fi
+#
+#if [[ -v UPGRADE ]] || ! [ -x "$(command -v kicad)" ]; then
+#  echo " - installing kicad from ppa"
+#  sudo add-apt-repository --yes ppa:kicad/kicad-6.0-releases
+#  sudo apt update
+#  sudo apt install --yes --install-recommends kicad
+#else
+#  echo " - kicad already installed"
+#fi
+#
+#if [[ -v UPGRADE ]] || ! [ -x "$(command -v cq-editor)" ]; then
+#  echo " - install cadquery and cadquery editor"
+#  conda install -c cadquery -c conda-forge cadquery=master --yes
+#  conda install -c cadquery -c conda-forge cq-editor=master --yes
+#else
+#  echo " - cadquery and cadquery editor already installed"
+#fi
 
 
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v tmuxp)" ]; then
-  echo " - installing tmuxp"
-  pip3 install tmuxp
-else
-  echo " - tmuxp already installed"
-fi
+#if [[ -v UPGRADE ]] || ! [ -x "$(command -v tmuxp)" ]; then
+#  echo " - installing tmuxp"
+#  pip3 install tmuxp
+#else
+#  echo " - tmuxp already installed"
+#fi
 
-if [[ -v UPGRADE ]] || ! [ -x "$(command -v black)" ]; then
-  echo " - installing black"
-  pip3 install black
-else
-  echo " - black already installed"
-fi
+#if [[ -v UPGRADE ]] || ! [ -x "$(command -v black)" ]; then
+#  echo " - installing black"
+#  pip3 install black
+#else
+#  echo " - black already installed"
+#fi
 
 echo " - linking dot files into \$HOME"
 
@@ -224,22 +210,31 @@ do
   ln -sfT $PWD/$file $HOME/.ssh/$file_name
 done
 
-echo " - installing MS fonts so the browser looks non-terrible"
+#echo " - installing MS fonts so the browser looks non-terrible"
 
-sudo add-apt-repository multiverse --yes
-sudo apt update
-sudo apt install ttf-mscorefonts-installer --yes
+#sudo add-apt-repository multiverse --yes
+#sudo apt update
+#sudo apt install ttf-mscorefonts-installer --yes
+
 
 echo " - linking binaries into \$HOME/local/bin"
 
 mkdir -p $HOME/local
 ln -sf $PWD/local-bin $HOME/local/bin
 
-sudo apt autoremove --yes
+echo " - deal with vim plugins"
 
-echo
-echo "NOTES:"
-echo "INSTALL UNITE-SHELL manually: https://github.com/hardpixel/unite-shell"
-echo "INSTALL FONT: https://github.com/romkatv/powerlevel10k#manual-font-installation"
-echo "SIGN OUT AND BACK IN AGAIN TO UPDATE SHELL (FIRST TIME ONLY)"
-echo "RUN WITH UPGRADE=1 TO UPGRADE EVERYTHING"
+mkdir -p ${HOME}/.vim/backups
+
+if [[ -v UPGRADE ]] || [ -f "${HOME}/.vim/autoload/plug.vim" ]
+then
+  echo " - vim plug already installed"
+else
+  curl -sfLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+fi
+if [[ -v UPGRADE ]] || [ -f "${HOME}/.vim/autoload/plug.vim" ]
+then
+  nvim +'PlugInstall --sync' +qa
+fi
+
+sudo apt autoremove --yes

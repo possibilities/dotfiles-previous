@@ -210,12 +210,10 @@ do
   ln -sfT $PWD/$file $HOME/.ssh/$file_name
 done
 
-#echo " - installing MS fonts so the browser looks non-terrible"
-
-#sudo add-apt-repository multiverse --yes
-#sudo apt update
-#sudo apt install ttf-mscorefonts-installer --yes
-
+echo " - installing MS fonts so the browser looks non-terrible"
+sudo add-apt-repository multiverse --yes
+sudo apt update
+sudo apt install ttf-mscorefonts-installer --yes
 
 echo " - linking binaries into \$HOME/local/bin"
 

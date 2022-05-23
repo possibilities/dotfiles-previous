@@ -3,3 +3,5 @@ font:
 scrolling:
   history: 0
   multiplier: 0
+selection:
+  save_to_clipboard: true

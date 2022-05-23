@@ -9,3 +9,5 @@ home/vim/autoload
 
 # temps
 home/vim/.netrwhist
+
+*.iso

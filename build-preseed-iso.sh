@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# From https://github.com/delfer/debian-preseed-iso
+
 #This script downloads Debians's iso and makes it auto-install
 #Requires:
 #	- 'xorriso' installed
@@ -24,8 +26,8 @@ fixSum() {
 }
 
 #####[ Getting latest iso ]#####
-BASE_URL=https://cdimage.debian.org/debian-cd/current/amd64/iso-cd
-ISO=$( wget -qO - $BASE_URL/SHA512SUMS | grep netinst | grep -v mac | head -n 1 | awk '{ print $2 }' )
+BASE_URL=https://cdimage.debian.org/mirror/cdimage/archive/11.2.0/amd64/iso-cd
+ISO="debian-11.2.0-amd64-netinst.iso"
 
 if [ ! -f "$ISO" ]; then
 	wget "$BASE_URL/$ISO" -O "$ISO"
